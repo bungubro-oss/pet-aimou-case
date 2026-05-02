@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vision | NekoBIN（ねこビン）</title>
+    <meta name="description" content="NekoBINが描く未来のビジョン。ペットとの記憶をプラットフォームへ。B.brothersが挑む、思い出の新しい形。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .vision-page-hero {
+            background: linear-gradient(160deg, #1a1209 0%, #2c1f0e 60%, #3d2b14 100%);
+            color: var(--color-white);
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+        }
+        .vision-page-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--color-accent-soft);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.15em;
+        }
+        .vision-page-hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            line-height: 2;
+            opacity: 0.85;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .vision-phase {
+            background: #fff;
+            padding: 5rem 0;
+        }
+        .vision-phase:nth-child(even) {
+            background: #FAFAFA;
+        }
+        .phase-badge {
+            display: inline-block;
+            background: var(--color-accent-soft);
+            color: #fff;
+            padding: 0.4rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+        .phase-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--color-text-main);
+            margin-bottom: 1.5rem;
+        }
+        .phase-body {
+            color: var(--color-text-sub);
+            line-height: 2;
+            font-size: 1.05rem;
+        }
+        .vision-roadmap {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        .roadmap-step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 280px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .roadmap-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--color-accent-soft);
+        }
+        .roadmap-num {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--color-accent-soft);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .roadmap-label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--color-text-main);
+            margin-bottom: 0.5rem;
+        }
+        .roadmap-sub {
+            font-size: 0.85rem;
+            color: var(--color-text-sub);
+            line-height: 1.6;
+        }
+        .product-ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .idea-card {
+            background: #fff;
+            border: 1px solid rgba(184,134,11,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .idea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        .idea-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid var(--color-accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .idea-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--color-accent-soft);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .idea-tag {
+            display: inline-block;
+            background: rgba(184,134,11,0.08);
+            color: var(--color-accent-soft);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.8rem;
+        }
+        .idea-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--color-text-main);
+            margin-bottom: 0.8rem;
+        }
+        .idea-body {
+            font-size: 0.9rem;
+            color: var(--color-text-sub);
+            line-height: 1.8;
+        }
+        .vision-cta-section {
+            background: linear-gradient(160deg, #1a1209 0%, #2c1f0e 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .vision-cta-section h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--color-accent-soft);
+            margin-bottom: 1.5rem;
+        }
+        .vision-cta-section p {
+            line-height: 2;
+            opacity: 0.85;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        @media (max-width: 600px) {
+            .roadmap-step:not(:last-child)::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <header id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">NekoBIN</a>
+            <ul class="nav-links">
+                <li><a href="index.html#story">Story</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="gift.html">Gift</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="vision-page-hero">
+            <h1>Our Vision</h1>
+            <p>
+                ペットとの「記憶」を、テクノロジーで新しい体験に変える。<br>
+                NekoBINは、ひとつの小さなビンから始まる、壮大なプラットフォームへ。
+            </p>
+        </section>
+
+        <!-- Phase 1: 現在地 -->
+        <section class="vision-phase animate-on-scroll">
+            <div class="container" style="max-width: 900px;">
+                <span class="phase-badge">Phase 1 ／ 現在</span>
+                <h2 class="phase-title">物理 × デジタルの融合</h2>
+                <p class="phase-body">
+                    NekoBINは、愛するペットの「毛」という物理的な存在を、宝石のように美しく保管するボトルとして誕生しました。<br>
+                    現在開発中の「NFCタグ付きねこビン（第二弾）」では、ビンにスマホをかざすだけで当時の写真や動画が蘇る「物理とデジタルの融合」を実現します。<br><br>
+                    Makuakeでの応援購入総額100万円突破を皮切りに、私たちは「ペットとの思い出の残し方」を、根本から再定義します。
+                </p>
+                <div class="vision-roadmap">
+                    <div class="roadmap-step">
+                        <div class="roadmap-num">01</div>
+                        <div class="roadmap-label">ねこビン（初代）</div>
+                        <div class="roadmap-sub">毛を美しく保管するボトル。Makuake 4,273%達成。</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-num">02</div>
+                        <div class="roadmap-label">NFCタグ付き（第二弾）</div>
+                        <div class="roadmap-sub">物理＋デジタル融合。かざすと思い出が蘇る。</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-num">03</div>
+                        <div class="roadmap-label">第三弾（次の驚き）</div>
+                        <div class="roadmap-sub">五感・時間・命の循環へ。世界が驚く新体験。</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-num">04</div>
+                        <div class="roadmap-label">プラットフォーム化</div>
+                        <div class="roadmap-sub">「ペットの思い出＝NekoBIN」の確立。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 2: プラットフォーム戦略 -->
+        <section class="vision-phase animate-on-scroll">
+            <div class="container" style="max-width: 900px;">
+                <span class="phase-badge">Phase 2 ／ 戦略</span>
+                <h2 class="phase-title">「第三の矢」を放ってから、プラットフォームへ</h2>
+                <p class="phase-body">
+                    NekoBINは、単なるグッズブランドではなく、「ペットとの記憶を新しい形で残す体験」そのものを提案するブランドへと進化していきます。<br><br>
+                    第二弾NFCタグ付きねこビンで「物理×デジタル」の融合を実現した後、さらにもう一段階——誰もが驚くような「思い出の新しい残し方（第三弾）」を展開することで、<strong>「ペットの思い出といえばNekoBIN」</strong>という存在になることを目指しています。
+                </p>
+            </div>
+        </section>
+
+        <!-- Phase 3: 第三弾候補 -->
+        <section class="vision-phase animate-on-scroll" style="background: #FAFAFA;">
+            <div class="container">
+                <span class="phase-badge">Phase 3 ／ 未来プロダクト構想</span>
+                <h2 class="phase-title" style="text-align: center;">次の体験へ — 構想中のアイデア</h2>
+                <p style="text-align: center; color: var(--color-text-sub); margin-bottom: 0;">NekoBINは「見る」だけにとどまりません。聴覚・嗅覚・触覚・時間・命の循環など、あらゆる角度から「記憶の残し方」を探求しています。</p>
+
+                <div class="product-ideas-grid">
+                    <div class="idea-card">
+                        <div class="idea-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 18.5A6.5 6.5 0 1 1 15.5 12H9m0 0v6.5M3 9a9 9 0 0 1 18 0"/><circle cx="12" cy="12" r="1"/></svg>
+                        </div>
+                        <span class="idea-tag">五感の拡張</span>
+                        <h3 class="idea-title">聴覚・嗅覚・触覚の保存</h3>
+                        <p class="idea-body">ゴロゴロ音、肉球の温もり、あの子だけの匂い——写真や動画では残せない記憶を、五感で体験できる形に。</p>
+                    </div>
+                    <div class="idea-card">
+                        <div class="idea-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+                        </div>
+                        <span class="idea-tag">時間軸</span>
+                        <h3 class="idea-title">成長と時間を形に残す</h3>
+                        <p class="idea-body">1歳・2歳と積み重なる毛の変化を、アートとして可視化。未来の自分へ届けるタイムカプセルのような体験。</p>
+                    </div>
+                    <div class="idea-card">
+                        <div class="idea-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                        </div>
+                        <span class="idea-tag">命の循環</span>
+                        <h3 class="idea-title">「毛」から次の命へ</h3>
+                        <p class="idea-body">保管するだけでなく、毛を自然に還し新しい命（植物や自然）に繋げる。エシカルで循環的なメモリアル体験。</p>
+                    </div>
+                    <div class="idea-card">
+                        <div class="idea-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <span class="idea-tag">テクノロジーとの融合</span>
+                        <h3 class="idea-title">ARとAIで記憶を蘇らせる</h3>
+                        <p class="idea-body">スマホをかざすと現実空間に愛猫が現れるAR体験や、AIがその子らしい言葉を届けるグリーフケア。思い出が、より鮮明に蘇る未来へ。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="vision-phase animate-on-scroll">
+            <div class="container" style="max-width: 900px;">
+                <span class="phase-badge">Next Steps ／ これからの展望</span>
+                <h2 class="phase-title">愛するペットとの記憶を、もっと豊かに</h2>
+                <p class="phase-body">
+                    NekoBINは、現在進行形で進化しています。<br><br>
+                    第二弾「NFC付きねこビン」で物理とデジタルをつなぎ、その先には五感・時間・テクノロジーを活かした新しい体験を、一つひとつ丁寧にお届けしていきます。<br><br>
+                    大切なのは、ただ「モノ」を届けることではありません。<strong>あなたとあなたの大切な家族との、かけがえのない記憶を残すお手伝いをすること</strong>——それがNekoBINの変わらない想いです。
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="vision-cta-section">
+            <div class="container">
+                <h2>ひとつのビンから始まる、壮大な旅へ。</h2>
+                <p>NekoBINは、愛するペットとの記憶を永遠に残す旅の始まりです。<br>あなたとあなたの大切な家族の物語を、私たちと一緒に形にしてください。</p>
+                <a href="index.html#products" class="btn" style="background: var(--color-accent-soft); color: #fff; padding: 1rem 3rem; border-radius: 30px;">商品を見る</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">NekoBIN</div>
+                <div class="footer-links">
+                    <a href="https://twitter.com/NekoBIN" target="_blank" rel="noopener noreferrer">Twitter (X)</a>
+                    <a href="https://instagram.com/NekoBIN" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="mailto:info@example.com">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 NekoBIN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

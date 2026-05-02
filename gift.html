@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift - NekoBIN（ねこビン）| 大切な人への、そのまま渡せる贈り物</title>
+    <meta name="description" content="NekoBINのギフトラッピング。ネイビーの巾着袋に包まれ、メッセージカードを添えて。価格情報の入っていない、そのまま渡せるプレミアムな贈り物です。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gift-hero {
+            padding: 12rem 0 8rem;
+            background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('gift_hero_bag.png?v=2');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+        .gift-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        .gift-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 8rem 0;
+        }
+        .gift-intro h2 {
+            font-size: 2.5rem;
+            color: var(--color-text-sub);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+        .gift-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+        .gift-feature-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .gift-feature-text {
+            text-align: left;
+        }
+        .gift-feature-text h3 {
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+        .gift-feature-text p {
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+        .gift-details {
+            background-color: var(--color-white);
+            padding: 8rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .gift-details-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .detail-item {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+        .detail-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .detail-img {
+            flex: 1;
+        }
+        .detail-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .detail-info {
+            flex: 1;
+        }
+        .detail-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-sub);
+            font-family: var(--font-serif);
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--color-accent-soft);
+            color: var(--color-white);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .gift-feature-grid, .detail-item {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .gift-hero h1 { font-size: 2.5rem; }
+            .gift-feature-text { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header id="header">
+        <nav class="nav-container">
+            <div class="logo"><a href="index.html">NekoBIN</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#story">Story</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="gift.html">Gift</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gift-hero">
+            <div class="container">
+                <h1 class="fade-in">愛する毛を、<br>そのまま渡せる贈り物に。</h1>
+                <p class="sub-copy fade-in" style="color: var(--color-white);">NekoBIN Premium Gift Wrapping</p>
+            </div>
+        </section>
+
+        <section class="gift-intro">
+            <div class="container">
+                <h2 class="animate-on-scroll">届いてすぐ、<br>「ありがとう」の気持ちを添えて。</h2>
+                <div class="gift-feature-grid">
+                    <div class="gift-feature-image animate-on-scroll">
+                        <img src="gift_hero_bag.png?v=2" alt="ネイビーの巾着袋ラッピング">
+                    </div>
+                    <div class="gift-feature-text animate-on-scroll">
+                        <span class="tag">Standard Service</span>
+                        <h3>全商品、無料ラッピング付き</h3>
+                        <p>NekoBINは、お迎えしたその日から大切な贈り物として扱えるよう、落ち着いたネイビーの巾着袋（リボン付き）に入れてお届けします。<br><br>メッセージカードや納品物には一切の価格情報を記載しておりませんので、ご友人やご家族への直送ギフトとしても安心してご利用いただけます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gift-details">
+            <div class="container">
+                <div class="gift-details-inner">
+                    <div class="detail-item animate-on-scroll">
+                        <div class="detail-img">
+                            <img src="gift_message_card.png?v=2" alt="メッセージカードとQRコード">
+                        </div>
+                        <div class="detail-info">
+                            <h4>想いを伝える、メッセージカード</h4>
+                            <p>全てのギフトに、NekoBINオリジナルのメッセージカードを同梱しています。<br><br>カード裏面のQRコードからは「使い方の説明ページ」へ直接アクセス可能。初めて手にする方でも、迷わず愛猫の毛を思い出に変えることができます。</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item animate-on-scroll">
+                        <div class="detail-img">
+                            <img src="gift_charm.png?v=2" alt="猫モチーフのメモリアルチャーム">
+                        </div>
+                        <div class="detail-info">
+                            <h4>想いを閉じ込める、美しいチャーム</h4>
+                            <p>巾着袋の中には、愛猫の毛を大切に守るためのケース。例えばこの「ねこチャーム」タイプなら、ゴールドの猫耳モチーフが愛らしく、いつも身近に感じることができます。<br><br>※商品は巾着袋に入った状態で、丁寧に梱包してお届けします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gift-scenes animate-on-scroll" style="padding: 8rem 0; background: #fff;">
+            <div class="container">
+                <h2 class="section-title">Gift Scenes<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="product-card" style="padding: 1.5rem; text-align: left;">
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-accent); margin-bottom: 1rem;">お迎え記念日に</h4>
+                        <p style="font-size: 0.9rem;">家族になった特別な日。ブラッシングで集めた毛を詰めて、その年だけの思い出に。</p>
+                    </div>
+                    <div class="product-card" style="padding: 1.5rem; text-align: left;">
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-accent); margin-bottom: 1rem;">猫好きの友人へ</h4>
+                        <p style="font-size: 0.9rem;">「うちの子」が一番の友人へ。毛を捨てるのがもったいない、という会話から生まれるギフト。</p>
+                    </div>
+                    <div class="product-card" style="padding: 1.5rem; text-align: left;">
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-accent); margin-bottom: 1rem;">虹の橋を渡った子へ</h4>
+                        <p style="font-size: 0.9rem;">手元に残った大切な毛を、宝石のように。ずっとそばにいたいという想いに寄り添います。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section animate-on-scroll" style="text-align: center; padding: 10rem 0; background: var(--color-bg);">
+            <div class="container">
+                <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 2rem;">大切なあの子への、贈り物を探す</h2>
+                <a href="index.html#products" class="btn btn-primary" style="border-radius: 50px; padding: 1.2rem 4rem;">商品ラインナップを見る</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">NekoBIN</div>
+                <div class="footer-links">
+                    <a href="https://twitter.com/NekoBIN" target="_blank" rel="noopener noreferrer">Twitter (X)</a>
+                    <a href="https://instagram.com/NekoBIN" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="mailto:info@example.com">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 NekoBIN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>

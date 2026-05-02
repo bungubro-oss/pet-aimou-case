@@ -1,0 +1,777 @@
+/* 
+    NekoBIN - style.css
+    Design System: Premium, Warm, Cinematic, Elegant
+*/
+
+:root {
+    /* Colors */
+    --color-bg: #F9F8F6; /* オフホワイト / 生成り */
+    --color-text-main: #333333;
+    --color-text-sub: #5D4037; /* 木目に合うブラウン */
+    --color-accent: #B8860B; /* アンティークゴールド */
+    --color-accent-soft: #D4AF37;
+    --color-deep: #1A237E; /* 深いネイビー */
+    --color-natural: #556B2F; /* オリーブグリーン */
+    --color-white: #FFFFFF;
+
+    /* Fonts */
+    --font-serif: 'Shippori Mincho', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+
+    /* Spacing */
+    --space-unit: 1rem;
+    --container-width: 1200px;
+    --transition-premium: 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background Texture (Refined Linen/Paper feel) */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.04;
+    z-index: 9999;
+    /* Noise + Subtle Fabric Pattern */
+    background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+        linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.02) 75%, rgba(0,0,0,0.02)),
+        linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.02) 75%, rgba(0,0,0,0.02));
+    background-size: 200px 200px, 4px 4px, 4px 4px;
+    background-position: 0 0, 0 0, 2px 2px;
+}
+
+/* Typography */
+h1, h2, h3, .logo {
+    font-family: var(--font-serif);
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    background: rgba(249, 248, 246, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--color-text-sub);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--color-text-main);
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('cute_monotone_cat_hero_1777551936436.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Simple Parallax */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to top, var(--color-bg), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 3.375rem; /* 4.5rem * 0.75 */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-white); /* 白に変更 */
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+.sub-copy {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--color-accent-soft); /* 黄色（アンティークゴールド）に変更 */
+    margin-bottom: 3rem;
+    opacity: 1;
+}
+
+/* Buttons */
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    border-radius: 0; /* Sharp, elegant edges */
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-text-sub);
+    color: var(--color-white);
+    border: 1px solid var(--color-text-sub);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brass Shine Effect on Hover */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.6s;
+    opacity: 0;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+    opacity: 1;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-text-main);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-text-main);
+    color: var(--color-white);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.8s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+    letter-spacing: 0.05em; /* Start slightly tighter */
+}
+
+.hero-content h1.fade-in { 
+    animation-delay: 0.3s;
+    animation-name: fadeInUpBreathing;
+}
+.sub-copy.fade-in { animation-delay: 0.7s; }
+.cta-group.fade-in { animation-delay: 1.1s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Breathing animation for key copy */
+@keyframes fadeInUpBreathing {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        letter-spacing: 0.05em;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.15em; /* Expand slowly like a breath */
+    }
+}
+
+/* Section Common */
+section {
+    padding: 8rem 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    color: var(--color-text-sub);
+    letter-spacing: 0.2em;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--color-accent);
+}
+
+.title-paw {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1rem;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+}
+
+.title-paw svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-accent);
+}
+
+/* Story Section */
+.story-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Products Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--color-white);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition-premium);
+    border: 1px solid rgba(184, 134, 11, 0.15);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(184, 134, 11, 0.1);
+    border-color: var(--color-accent-soft);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.product-card:nth-child(2) { animation-delay: 1s; }
+.product-card:nth-child(3) { animation-delay: 2s; }
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent); /* Brass top line */
+    transform: scaleX(0);
+    transition: 0.4s ease;
+}
+
+.product-card:hover::before {
+    transform: scaleX(1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-soft));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.price {
+    color: var(--color-text-sub);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.product-note {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--color-text-sub);
+    color: var(--color-text-sub);
+    font-size: 0.85rem;
+}
+
+.btn-outline:hover {
+    background: var(--color-text-sub);
+    color: var(--color-white);
+}
+
+/* Product Variations (Hover Reveal - Large Layout) */
+.product-variations {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+.product-card:hover .product-variations {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Hide main info on hover to give space to variations (Target LP behavior) */
+.product-card:hover .product-image,
+.product-card:hover .product-note {
+    display: none;
+}
+
+.variation {
+    flex: 1;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.variation:hover {
+    transform: scale(1.03);
+}
+
+.variation img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.variation span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-accent-soft); /* Gold labels */
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* Usage Section */
+.usage-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px; /* 幅を広げて1行に対応 */
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    white-space: nowrap;
+    transition: var(--transition-premium);
+    position: relative;
+    cursor: pointer;
+}
+
+.step-hover-image {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%) translateX(20px) scale(0.9);
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 10;
+    border: 3px solid var(--color-white);
+}
+
+.step:hover .step-hover-image {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.step:nth-child(2) { margin-left: 2rem; }
+.step:nth-child(3) { margin-left: 4rem; }
+.step:nth-child(4) { margin-left: 6rem; }
+.step:nth-child(5) { margin-left: 8rem; }
+
+.step-num {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--color-accent);
+    line-height: 1;
+    min-width: 100px;
+    font-weight: 300;
+    opacity: 0.6;
+}
+
+.step-content {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+}
+
+.step h4 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--color-text-sub);
+    min-width: 150px; /* タイトルの幅を揃える */
+}
+
+.step p {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+}
+
+/* Voice Section */
+.voice-section {
+    background: #FAFAFA;
+}
+
+.voice-hint {
+    transition: opacity 0.5s ease;
+}
+
+.voice-section:hover .voice-hint {
+    opacity: 0 !important;
+}
+
+.voice-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.voice-section:hover .voice-content {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 2rem;
+}
+
+.voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.voice-card {
+    background: var(--color-white);
+    padding: 2.5rem 2rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(184, 134, 11, 0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.voice-card:hover {
+    transform: translateY(-5px);
+}
+
+.voice-card::before {
+    content: '“';
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 5rem;
+    color: var(--color-accent-soft);
+    opacity: 0.15;
+    font-family: var(--font-serif);
+    line-height: 1;
+}
+
+.voice-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    color: var(--color-text-main);
+}
+
+.voice-author {
+    font-size: 0.9rem;
+    color: var(--color-text-sub);
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Social Impact Section */
+.impact-section {
+    background: #EFEBE9; /* Very soft warm grey-brown */
+}
+
+.impact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.impact-message {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--color-text-sub);
+}
+
+/* Our Vision Section - Refined Gray Gradient */
+.vision-section {
+    background: linear-gradient(135deg, #F0F0F0 0%, #E0E0E0 100%);
+    color: var(--color-text-main);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.vision-section .section-title {
+    color: var(--color-text-sub);
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vision-content p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.vision-content p:last-child {
+    font-family: var(--font-serif);
+    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+    color: var(--color-accent);
+    margin-top: 3rem;
+    opacity: 1;
+    white-space: nowrap;
+}
+
+/* Cat Footprint Cursor Trail Styles */
+.cat-paw-trail {
+    position: absolute; /* その場に留まるように修正 */
+    width: 40px; 
+    height: 40px;
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0.6;
+    animation: fadeOutPaw 3s forwards ease-out; /* 3秒に延長 */
+}
+
+@keyframes fadeOutPaw {
+    0% { transform: scale(0.5) rotate(0deg); opacity: 0.6; }
+    100% { transform: scale(1.2) rotate(10deg); opacity: 0; }
+}
+
+/* Static Decorations */
+.static-paw {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0.1;
+    pointer-events: none;
+    fill: var(--color-text-sub);
+}
+
+/* Animations Scroll Trigger */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive (Mobile Refinement) */
+@media (max-width: 768px) {
+    section {
+        padding: 5rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .impact-message {
+        font-size: 1.5rem;
+    }
+}
+
+/* Footer Refinement */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    color: var(--color-text-sub);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-links a:hover {
+    border-bottom: 1px solid var(--color-text-main);
+}

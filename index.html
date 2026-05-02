@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NekoBIN（ねこビン）| 愛する毛を、思い出に変える。</title>
+    <meta name="description" content="ペットとの日々を美しく残す「ペット愛毛ケース」NekoBIN。ブラッシング後の毛を小さなタイムカプセルに。保護猫・保護犬活動を支援するプレミアムブランドです。">
+    <meta name="keywords" content="ペット愛毛ケース,遺毛 保管,猫 抜け毛 活用,ペット メモリアル ギフト,おしゃれ 抜け毛 ケース,NekoBIN">
+    
+    <!-- Open Graph / SNS -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NekoBIN（ねこビン）| 愛する毛を、思い出に変える。">
+    <meta property="og:description" content="ペットとの日々を美しく残す「ペット愛毛ケース」NekoBIN。">
+    <meta property="og:image" content="https://example.com/ogp.jpg"> <!-- TODO: Replace with actual image -->
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header id="header">
+        <nav class="nav-container">
+            <div class="logo">NekoBIN</div>
+            <ul class="nav-links">
+                <li><a href="#story">Story</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="gift.html">Gift</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="fade-in">愛する毛を、思い出に変える。</h1>
+                    <p class="sub-copy fade-in" style="font-weight: bold; color: var(--color-white);">ペット愛毛ケース「NekoBIN」</p>
+                    <div class="cta-group fade-in">
+                        <a href="#products" class="btn btn-primary" style="border-radius: 30px; border: 2px solid var(--color-accent-soft); background-color: var(--color-accent-soft); color: var(--color-white);">商品を見る</a>
+                    </div>
+                    <!-- Static Paw Decorations -->
+                    <div class="static-paw" style="top: -20%; left: 10%; transform: rotate(-15deg);">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
+                    </div>
+                    <div class="static-paw" style="bottom: -30%; right: 5%; transform: rotate(20deg);">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Brand Story -->
+        <section id="story" class="story-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Story<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <div class="story-content">
+                    <div class="story-image-container fade-in" style="margin-bottom: 3rem; text-align: center;">
+                        <img src="story_header_image.png" alt="かわいい猫たち" style="max-width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                    </div>
+                    <p>「世界で一番かわいい猫は、どの子ですか？」<br>
+                    きっと、あなたの隣にいるその子ですよね。</p>
+                    <p>かわいい猫モチーフの雑貨はたくさんあるけれど、<br>
+                    「うちの子」そのものには敵いません。</p>
+                    <p>NekoBINは、そんな愛しい我が子の一部である「毛」を<br>
+                    宝石のように大切に保管するボトルです。</p>
+                    <div class="story-image-container fade-in" style="margin-top: 3rem; text-align: center;">
+                        <img src="story_image.png" alt="NekoBIN" style="max-width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                    </div>
+                    <div class="static-paw" style="bottom: 0; left: -50px; opacity: 0.05;">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Product Lineup -->
+        <section id="products" class="products-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Products<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <p style="text-align: center; margin-top: -2.5rem; margin-bottom: 3rem; color: var(--color-text-sub); font-family: var(--font-serif); font-size: 1.1rem; letter-spacing: 0.1em;">お迎え記念や贈り物に</p>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="premium_cat_bin_image_1777541962179.png" alt="ねこビン">
+                        </div>
+                        <h3>ねこビン</h3>
+                        <div class="product-variations">
+                            <div class="variation">
+                                <img src="https://stationery.sentouryoku.com/wp-content/uploads/2026/03/detail_38719_17035073724472.webp" alt="ねこビン ディスプレイタイプ">
+                                <span>ディスプレイタイプ</span>
+                            </div>
+                            <div class="variation">
+                                <img src="https://stationery.sentouryoku.com/wp-content/uploads/2026/03/detail_38719_17035072375439.webp" alt="ねこビン チャームタイプ">
+                                <span>チャームタイプ</span>
+                            </div>
+                        </div>
+                        <a href="https://sentouryoku.shop-pro.jp/?mode=cate&cbid=2917556&csid=0" class="btn btn-outline" target="_blank" rel="noopener noreferrer">詳細・購入</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="premium_dog_bin_image_1777541921313.png" alt="いぬビン">
+                        </div>
+                        <h3>いぬビン</h3>
+                        <div class="product-variations">
+                            <div class="variation">
+                                <img src="https://stationery.sentouryoku.com/wp-content/uploads/2026/03/inubin_display.png" alt="いぬビン ディスプレイタイプ">
+                                <span>ディスプレイタイプ</span>
+                            </div>
+                            <div class="variation">
+                                <img src="https://stationery.sentouryoku.com/wp-content/uploads/2026/03/inubin_charm.png" alt="いぬビン チャームタイプ">
+                                <span>チャームタイプ</span>
+                            </div>
+                        </div>
+                        <a href="https://sentouryoku.shop-pro.jp/?mode=cate&cbid=2979851&csid=0" class="btn btn-outline" target="_blank" rel="noopener noreferrer">詳細・購入</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="premium_rabbit_bin_image_1777541940133.png" alt="うさビン">
+                        </div>
+                        <h3>うさビン</h3>
+                        <div class="product-variations">
+                            <div class="variation">
+                                <img src="https://stationery.sentouryoku.com/wp-content/uploads/2026/03/usabin_display.png" alt="うさビン ディスプレイタイプ">
+                                <span>ディスプレイタイプ</span>
+                            </div>
+                            <div class="variation">
+                                <img src="https://stationery.sentouryoku.com/wp-content/uploads/2026/03/usabin_charm.png" alt="うさビン チャームタイプ">
+                                <span>チャームタイプ</span>
+                            </div>
+                        </div>
+                        <a href="https://sentouryoku.shop-pro.jp/?mode=cate&cbid=2979852&csid=0" class="btn btn-outline" target="_blank" rel="noopener noreferrer">詳細・購入</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Intro Section -->
+        <section id="gift-intro" class="animate-on-scroll" style="background-color: var(--color-white); padding: 6rem 0;">
+            <div class="container">
+                <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <img src="gift_hero_bag.png?v=2" alt="ギフトラッピング" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-text-sub);">そのまま渡せる、プレミアムな贈り物を。</h2>
+                        <p style="margin-bottom: 2rem; line-height: 2;">NekoBINは、大切な方へそのまま手渡せるよう、落ち着いたネイビーの巾着袋に包んでお届けします。価格情報の入っていないメッセージカードも同梱しているため、直送ギフトとしても安心です。</p>
+                        <a href="gift.html" class="btn btn-outline" style="border-radius: 30px;">ギフトラッピングの詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campaign Banner -->
+        <section class="campaign-section animate-on-scroll" style="background-color: #FAFAFA; padding: 5rem 0; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <div class="container" style="text-align: center;">
+                <div style="background: white; border: 2px solid var(--color-accent-soft); border-radius: 20px; padding: 3rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-accent); font-family: var(--font-serif);">＼ LINE友達限定30名様に ／</h3>
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--color-text-main); font-family: var(--font-serif);">「ディスプレイタイプ」の<br>プレゼントキャンペーン実施中！</h2>
+                    <a href="#" target="_blank" rel="noopener noreferrer" style="background-color: #06C755; color: white; padding: 1rem 3rem; font-size: 1.1rem; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: bold; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: transform 0.3s ease;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.55 8.845 8.358 9.58-.32.969-1.026 2.92-1.246 3.618-.086.275.025.405.244.31 2.378-1.024 6.78-3.774 9.245-5.698C21.737 16.27 24 13.565 24 10.304zM7.558 13.275H4.806a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h.716c.394 0 .715.321.715.715v4.372h1.321c.394 0 .715.321.715.715v.716a.715.715 0 0 1-.715.715zm3.896 0h-1.43a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h1.43c.394 0 .715.321.715.715v5.088a.715.715 0 0 1-.715.715zm6.541-5.803v5.088a.715.715 0 0 1-.715.715h-.934a.722.722 0 0 1-.58-.291l-2.486-3.414v2.99a.715.715 0 0 1-.715.715h-.715a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h.935c.231 0 .445.111.579.292l2.486 3.414v-2.991a.715.715 0 0 1 .715-.715h.715c.395 0 .715.321.715.715zm4.076 0v5.088a.715.715 0 0 1-.715.715h-2.753a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h2.753c.394 0 .715.321.715.715v.716a.715.715 0 0 1-.715.715h-2.038v1.071h2.038c.394 0 .715.321.715.715v.715a.715.715 0 0 1-.715.715h-2.038v1.072h2.038c.394 0 .715.321.715.715z"/></svg>
+                        LINEで友だち追加する
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. How to Use -->
+        <section id="usage" class="usage-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">How to Use<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <div class="usage-steps">
+                    <div class="step">
+                        <span class="step-num">01</span>
+                        <div class="step-content">
+                            <h4>ブラッシング</h4>
+                            <p>いつも通り、優しくブラッシングしてあげてください。</p>
+                        </div>
+                        <img src="step1_brushing.png" alt="ブラッシング" class="step-hover-image">
+                    </div>
+                    <div class="step">
+                        <span class="step-num">02</span>
+                        <div class="step-content">
+                            <h4>毛を集める</h4>
+                            <p>ブラシに残った毛を、手のひらで丸めます。</p>
+                        </div>
+                        <img src="step2_fur_palm.png" alt="毛を集める" class="step-hover-image">
+                    </div>
+                    <div class="step">
+                        <span class="step-num">03</span>
+                        <div class="step-content">
+                            <h4>ビンに入れる</h4>
+                            <p>想いと一緒に、そっとビンの中に閉じ込めます。</p>
+                        </div>
+                        <img src="step3_put_in.png" alt="ビンに入れる" class="step-hover-image">
+                    </div>
+                    <div class="step">
+                        <span class="step-num">04</span>
+                        <div class="step-content">
+                            <h4>飾る</h4>
+                            <p>お気に入りの場所に置いて、日常に彩りを。</p>
+                        </div>
+                        <img src="step4_decorate.png" alt="飾る" class="step-hover-image">
+                    </div>
+                    <div class="step">
+                        <span class="step-num">05</span>
+                        <div class="step-content">
+                            <h4>見返す</h4>
+                            <p>記念日やふとした瞬間に、あの日の温もりを思い出して。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Voice -->
+        <section id="voice" class="voice-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Voice<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <p class="voice-hint" style="text-align: center; color: var(--color-text-main); font-size: 0.9rem; margin-top: -1.5rem; margin-bottom: 2rem;">※カーソルを合わせるとお客様の声が表示されます</p>
+                <div class="voice-content">
+                    <div class="voice-grid">
+                        <div class="voice-card">
+                            <p class="voice-text">「可愛い愛猫といつも一緒にいられる安心感。今までありそうでなかったチャームを作製してくれてありがとう」</p>
+                            <p class="voice-author">氏原 令子 さん</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-text">「飼い猫の抜けた毛を捨てるのがもったいないと言っている彼女にちょうどいいプレゼントになりそうです。すごく喜ぶと思います」</p>
+                            <p class="voice-author">といそな さん</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-text">「今日で急逝した愛猫の四七日になり、表示された広告からご縁を感じ購入させて頂きました。思い出にさせて頂きたいと存じます」</p>
+                            <p class="voice-author">Pratum さん</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-text">「とても素晴らしい商品を製作していただきありがとうございます。愛猫４匹いるので可愛く作って飾りたいと思います！」</p>
+                            <p class="voice-author">tennsei さん</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-text">「一つは自分用に一つは友人に！愛猫家にはたまらんにゃんな商品です！楽しみにしています！」</p>
+                            <p class="voice-author">kyarabi さん</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-text">「悩んでましたがやっぱり購入します。ウチは４匹いるので４つでいい感じにレイアウト出来そうです。楽しみに待ってます」</p>
+                            <p class="voice-author">グリーンアイキャット さん</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Social Impact -->
+        <section id="impact" class="impact-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Social Impact<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <div class="impact-content">
+                    <p class="impact-message">「ひとつの思い出が、もうひとつの命を支える。」</p>
+                    <p>NekoBINの売上の一部は、保護猫・保護犬活動を行う団体へ寄付されます。<br>
+                    私たちは、寄付金の使途や支援実績を透明性を持って報告することを約束します。</p>
+                    <p>あなたの愛するペットとの思い出が、新しい家族を待つあの子たちの未来に繋がります。</p>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="impact.html" class="btn btn-outline" style="border-radius: 30px;">保護猫支援の活動を見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Our Vision -->
+        <section id="vision" class="vision-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Our Vision<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <div class="vision-content">
+                    <p>私たちは、物理的なプロダクトを超えた「記憶のプラットフォーム」を目指しています。</p>
+                    <p>将来的に、ビンにスマホをかざすと当時の写真や動画が蘇るAR機能や、<br>
+                    最新のAI技術によって愛するペットとの対話や新しい動画を生成する体験を構想しています。</p>
+                    <p>NekoBINは、未来の記憶体験への入り口（ハードウェアキー）となります。</p>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="vision.html" class="btn btn-outline" style="border-radius: 30px;">ビジョンの全貌を見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. News -->
+        <section id="news" class="news-section animate-on-scroll" style="background-color: #fff; padding: 6rem 0;">
+            <div class="container">
+                <h2 class="section-title">News<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <div class="news-list" style="max-width: 800px; margin: 0 auto;">
+                    <a href="#" style="display: flex; gap: 2rem; padding: 1.5rem 1rem; border-bottom: 1px solid #EFEBE9; text-decoration: none; color: inherit; transition: background 0.3s ease;">
+                        <div class="news-date" style="color: var(--color-accent); font-family: var(--font-serif); font-size: 0.95rem; min-width: 100px;">2026.04.30</div>
+                        <div class="news-title" style="font-size: 1.05rem; line-height: 1.5;">【お知らせ】LINE友達限定・ディスプレイタイププレゼントキャンペーン開始！</div>
+                    </a>
+                    <!-- 記事が増えた場合は、ここに追記されます -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">NekoBIN</div>
+                <div class="footer-links">
+                    <a href="https://twitter.com/NekoBIN" target="_blank" rel="noopener noreferrer">Twitter (X)</a>
+                    <a href="https://instagram.com/NekoBIN" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="mailto:info@example.com">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 NekoBIN. All rights reserved.</p>
+                <div class="static-paw" style="top: 10px; right: 10px; opacity: 0.05; width: 50px; height: 50px;">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
