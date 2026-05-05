@@ -25,6 +25,11 @@
     <header id="header">
         <nav class="nav-container">
             <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">NekoBIN</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html#story">Story</a></li>
                 <li><a href="index.html#products">Products</a></li>
@@ -54,9 +59,9 @@
             <div class="container">
                 <h2 class="section-title">Current Reality<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
                 
-                <div class="reality-content" style="display: flex; gap: 4rem; align-items: center; max-width: 900px; margin: 0 auto; flex-wrap: wrap;">
-                    <div class="reality-text" style="flex: 1; min-width: 300px;">
-                        <h3 style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 1.5rem; color: var(--color-text-main); white-space: nowrap;">依然として多い、猫の殺処分</h3>
+                <div class="reality-content" style="display: flex; gap: 2rem; align-items: center; max-width: 900px; margin: 0 auto; flex-wrap: wrap;">
+                    <div class="reality-text" style="flex: 1; min-width: 280px;">
+                        <h3 style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 1.5rem; color: var(--color-text-main);">依然として多い、猫の殺処分</h3>
                         <p style="line-height: 1.8; color: var(--color-text-sub); margin-bottom: 1rem;">
                             環境省のデータによると、令和5年度（2023年度）の日本全国での<strong>猫の殺処分数は6,899頭</strong>にのぼります。
                         </p>
@@ -66,9 +71,9 @@
                         </p>
                         <p style="font-size: 0.8rem; color: #999; margin-top: 1rem;">※ 出典：環境省「犬・猫の引取り及び負傷動物等の収容並びに処分の状況（令和5年度）」</p>
                     </div>
-                    <div class="reality-data" style="flex: 1; min-width: 300px; background: #fff; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
+                    <div class="reality-data" style="flex: 1; min-width: 280px; background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
                         <h4 style="font-size: 1.2rem; color: var(--color-accent-soft); margin-bottom: 1rem;">令和5年度 猫の殺処分数</h4>
-                        <div style="font-size: 4rem; font-family: var(--font-serif); font-weight: bold; color: var(--color-accent); line-height: 1;">6,899<span style="font-size: 1.5rem;">頭</span></div>
+                        <div style="font-size: clamp(2.5rem, 10vw, 4rem); font-family: var(--font-serif); font-weight: bold; color: var(--color-accent); line-height: 1;">6,899<span style="font-size: 1.5rem;">頭</span></div>
                     </div>
                 </div>
             </div>
@@ -79,11 +84,11 @@
             <div class="container">
                 <h2 class="section-title">Our Action<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
                 
-                <div class="action-card" style="display: flex; gap: 3rem; background: #fff; padding: 3rem; border-radius: 15px; border: 1px solid rgba(184, 134, 11, 0.1); margin-bottom: 2rem; flex-wrap: wrap;">
-                    <div class="action-image" style="flex: 1; min-width: 300px;">
+                <div class="action-card" style="display: flex; gap: 2rem; background: #fff; padding: 2rem; border-radius: 15px; border: 1px solid rgba(184, 134, 11, 0.1); margin-bottom: 2rem; flex-wrap: wrap;">
+                    <div class="action-image" style="flex: 1; min-width: 280px;">
                         <img src="impact_cafe.png" alt="保護猫カフェとの提携" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
                     </div>
-                    <div class="action-text" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="action-text" style="flex: 1; min-width: 280px; display: flex; flex-direction: column; justify-content: center;">
                         <span style="display: inline-block; background: var(--color-accent-soft); color: #fff; padding: 0.3rem 1rem; border-radius: 30px; font-size: 0.8rem; margin-bottom: 1rem; width: fit-content;">取り組み事例 ①</span>
                         <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-text-main);">保護猫カフェとの提携</h3>
                         <p style="line-height: 1.8; color: var(--color-text-sub);">
@@ -93,8 +98,8 @@
                     </div>
                 </div>
 
-                <div class="action-card" style="display: flex; gap: 3rem; background: #fff; padding: 3rem; border-radius: 15px; border: 1px solid rgba(184, 134, 11, 0.1); flex-wrap: wrap-reverse;">
-                    <div class="action-text" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="action-card" style="display: flex; gap: 2rem; background: #fff; padding: 2rem; border-radius: 15px; border: 1px solid rgba(184, 134, 11, 0.1); flex-wrap: wrap-reverse;">
+                    <div class="action-text" style="flex: 1; min-width: 280px; display: flex; flex-direction: column; justify-content: center;">
                         <span style="display: inline-block; background: var(--color-accent-soft); color: #fff; padding: 0.3rem 1rem; border-radius: 30px; font-size: 0.8rem; margin-bottom: 1rem; width: fit-content;">取り組み事例 ②</span>
                         <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-text-main);">新しい里親への「想い出」のプレゼント</h3>
                         <p style="line-height: 1.8; color: var(--color-text-sub);">
@@ -102,7 +107,7 @@
                             初めてのブラッシングの毛を詰めてもらうことで、「保護猫」から「うちの子」になった記念と絆を、美しい形で残すお手伝いをしています。
                         </p>
                     </div>
-                    <div class="action-image" style="flex: 1; min-width: 300px;">
+                    <div class="action-image" style="flex: 1; min-width: 280px;">
                         <img src="impact_gift2.png" alt="里親プレゼント" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
                     </div>
                 </div>
@@ -116,7 +121,7 @@
         <section style="background-color: var(--color-accent-soft); padding: 4rem 0; text-align: center; color: white;">
             <div class="container">
                 <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1.5rem;">想い出を形にすることが、支援に繋がる</h3>
-                <p style="line-height: 1.8; max-width: 100%; margin: 0 auto 2rem; white-space: nowrap; font-size: clamp(0.75rem, 2.5vw, 1rem);">
+                <p style="line-height: 1.8; max-width: 100%; margin: 0 auto 2rem; font-size: clamp(0.75rem, 2.5vw, 1rem);">
                     NekoBINをお迎えいただくことで、売上の一部が保護猫活動への支援に繋がります。<br>
                     あなたと愛猫の絆が、どこかで待つ新しい命を救う力になります。
                 </p>
@@ -135,7 +140,10 @@
                     <a href="gift.html">Gift</a>
                     <a href="impact.html">Impact</a>
                     <a href="vision.html">Vision</a>
-                    <a href="mailto:info@example.com">Contact</a>
+                    <a href="https://lin.ee/scohhF7" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.4rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#06C755"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.55 8.845 8.358 9.58-.32.969-1.026 2.92-1.246 3.618-.086.275.025.405.244.31 2.378-1.024 6.78-3.774 9.245-5.698C21.737 16.27 24 13.565 24 10.304z"/></svg>
+                        Contact (LINE)
+                    </a>
                 </div>
                 <p class="copyright">&copy; 2026 NekoBIN. All rights reserved.</p>
                 <div class="static-paw" style="top: 10px; right: 10px; opacity: 0.05; width: 50px; height: 50px;">

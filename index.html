@@ -27,6 +27,11 @@
     <header id="header">
         <nav class="nav-container">
             <div class="logo">NekoBIN</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#story">Story</a></li>
                 <li><a href="#products">Products</a></li>
@@ -76,7 +81,7 @@
                     <div class="story-image-container fade-in" style="margin-top: 3rem; text-align: center;">
                         <img src="story_image.png" alt="NekoBIN" style="max-width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
                     </div>
-                    <div class="static-paw" style="bottom: 0; left: -50px; opacity: 0.05;">
+                    <div class="static-paw" style="bottom: 0; right: 0; opacity: 0.05;">
                         <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
                     </div>
                 </div>
@@ -145,14 +150,14 @@
         </section>
 
         <!-- Gift Intro Section -->
-        <section id="gift-intro" class="animate-on-scroll" style="background-color: var(--color-white); padding: 6rem 0;">
+        <section id="gift-intro" class="animate-on-scroll" style="background-color: var(--color-white); padding: 4rem 0;">
             <div class="container">
-                <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px;">
+                <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
                         <img src="gift_hero_bag.png?v=2" alt="ギフトラッピング" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     </div>
-                    <div style="flex: 1; min-width: 300px;">
-                        <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-text-sub);">そのまま渡せる、プレミアムな贈り物を。</h2>
+                    <div style="flex: 1; min-width: 280px;">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--color-text-sub);">そのまま渡せる、プレミアムな贈り物を。</h2>
                         <p style="margin-bottom: 2rem; line-height: 2;">NekoBINは、大切な方へそのまま手渡せるよう、落ち着いたネイビーの巾着袋に包んでお届けします。価格情報の入っていないメッセージカードも同梱しているため、直送ギフトとしても安心です。</p>
                         <a href="gift.html" class="btn btn-outline" style="border-radius: 30px;">ギフトラッピングの詳細を見る</a>
                     </div>
@@ -163,12 +168,26 @@
         <!-- Campaign Banner -->
         <section class="campaign-section animate-on-scroll" style="background-color: #FAFAFA; padding: 5rem 0; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
             <div class="container" style="text-align: center;">
-                <div style="background: white; border: 2px solid var(--color-accent-soft); border-radius: 20px; padding: 3rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-accent); font-family: var(--font-serif);">＼ LINE友達限定30名様に ／</h3>
-                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--color-text-main); font-family: var(--font-serif);">「ディスプレイタイプ」の<br>プレゼントキャンペーン実施中！</h2>
-                    <a href="#" target="_blank" rel="noopener noreferrer" style="background-color: #06C755; color: white; padding: 1rem 3rem; font-size: 1.1rem; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: bold; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: transform 0.3s ease;">
+                <div style="background: white; border: 2px solid var(--color-accent-soft); border-radius: 20px; padding: 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: clamp(1rem, 4vw, 1.5rem); margin-bottom: 1rem; color: var(--color-accent); font-family: var(--font-serif);">＼ LINE友達限定30名様に ／</h3>
+                    <h2 style="font-size: clamp(1.2rem, 5vw, 2rem); margin-bottom: 2rem; color: var(--color-text-main); font-family: var(--font-serif);">「ディスプレイタイプ」の<br>プレゼントキャンペーン実施中！</h2>
+                    <a href="https://lin.ee/scohhF7" target="_blank" rel="noopener noreferrer" style="background-color: #06C755; color: white; padding: 0.8rem 2rem; font-size: clamp(0.9rem, 3vw, 1.1rem); border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: bold; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: transform 0.3s ease;">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.55 8.845 8.358 9.58-.32.969-1.026 2.92-1.246 3.618-.086.275.025.405.244.31 2.378-1.024 6.78-3.774 9.245-5.698C21.737 16.27 24 13.565 24 10.304zM7.558 13.275H4.806a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h.716c.394 0 .715.321.715.715v4.372h1.321c.394 0 .715.321.715.715v.716a.715.715 0 0 1-.715.715zm3.896 0h-1.43a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h1.43c.394 0 .715.321.715.715v5.088a.715.715 0 0 1-.715.715zm6.541-5.803v5.088a.715.715 0 0 1-.715.715h-.934a.722.722 0 0 1-.58-.291l-2.486-3.414v2.99a.715.715 0 0 1-.715.715h-.715a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h.935c.231 0 .445.111.579.292l2.486 3.414v-2.991a.715.715 0 0 1 .715-.715h.715c.395 0 .715.321.715.715zm4.076 0v5.088a.715.715 0 0 1-.715.715h-2.753a.715.715 0 0 1-.715-.715V7.472a.715.715 0 0 1 .715-.715h2.753c.394 0 .715.321.715.715v.716a.715.715 0 0 1-.715.715h-2.038v1.071h2.038c.394 0 .715.321.715.715v.715a.715.715 0 0 1-.715.715h-2.038v1.072h2.038c.394 0 .715.321.715.715z"/></svg>
                         LINEで友だち追加する
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LINE Contact Section -->
+        <section id="line-contact" class="animate-on-scroll" style="background-color: var(--color-deep); padding: 5rem 0; color: white; text-align: center;">
+            <div class="container">
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">LINE Official Account</h2>
+                    <p style="margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.8;">商品に関するご相談や、再入荷のお知らせ、<br>愛猫との思い出作りのヒントを定期的にお届けします。</p>
+                    <a href="https://lin.ee/scohhF7" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background-color: #06C755; border-color: #06C755; border-radius: 50px; padding: 1rem 3rem; font-weight: bold; display: inline-flex; align-items: center; gap: 0.8rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.55 8.845 8.358 9.58-.32.969-1.026 2.92-1.246 3.618-.086.275.025.405.244.31 2.378-1.024 6.78-3.774 9.245-5.698C21.737 16.27 24 13.565 24 10.304z"/></svg>
+                        友だち追加はこちら
                     </a>
                 </div>
             </div>
@@ -277,7 +296,7 @@
         <!-- 6. Our Vision -->
         <section id="vision" class="vision-section animate-on-scroll">
             <div class="container">
-                <h2 class="section-title">Our Vision<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <h2 class="section-title">Our Vision<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29-40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
                 <div class="vision-content">
                     <p>私たちは、物理的なプロダクトを超えた「記憶のプラットフォーム」を目指しています。</p>
                     <p>将来的に、ビンにスマホをかざすと当時の写真や動画が蘇るAR機能や、<br>
@@ -293,7 +312,7 @@
         <!-- 7. News -->
         <section id="news" class="news-section animate-on-scroll" style="background-color: #fff; padding: 6rem 0;">
             <div class="container">
-                <h2 class="section-title">News<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
+                <h2 class="section-title">News<span class="title-paw"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29-40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg></span></h2>
                 <div class="news-list" style="max-width: 800px; margin: 0 auto;">
                     <a href="#" style="display: flex; gap: 2rem; padding: 1.5rem 1rem; border-bottom: 1px solid #EFEBE9; text-decoration: none; color: inherit; transition: background 0.3s ease;">
                         <div class="news-date" style="color: var(--color-accent); font-family: var(--font-serif); font-size: 0.95rem; min-width: 100px;">2026.04.30</div>
@@ -315,11 +334,14 @@
                     <a href="gift.html">Gift</a>
                     <a href="impact.html">Impact</a>
                     <a href="vision.html">Vision</a>
-                    <a href="mailto:info@example.com">Contact</a>
+                    <a href="https://lin.ee/scohhF7" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.4rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#06C755"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.55 8.845 8.358 9.58-.32.969-1.026 2.92-1.246 3.618-.086.275.025.405.244.31 2.378-1.024 6.78-3.774 9.245-5.698C21.737 16.27 24 13.565 24 10.304z"/></svg>
+                        Contact (LINE)
+                    </a>
                 </div>
                 <p class="copyright">&copy; 2026 NekoBIN. All rights reserved.</p>
                 <div class="static-paw" style="top: 10px; right: 10px; opacity: 0.05; width: 50px; height: 50px;">
-                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29-40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69-33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"/></svg>
                 </div>
             </div>
         </div>
