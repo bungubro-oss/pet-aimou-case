@@ -80,57 +80,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cat Footprint Cursor Trail Implementation (Matched with Target LP)
-    let lastX = 0;
-    let lastY = 0;
-    const distanceThreshold = 60; // Distance to spawn next paw
-    let stepCount = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        const x = e.pageX; // Use pageX for absolute positioning
-        const y = e.pageY; // Use pageY for absolute positioning
-
-        const distance = Math.sqrt(Math.pow(x - lastX, 2) + Math.pow(y - lastY, 2));
-
-        if (distance > distanceThreshold) {
-            // Calculate angle for rotation
-            const angle = Math.atan2(y - lastY, x - lastX) * (180 / Math.PI) + 90;
-            
-            // Alternating offset for left/right paws
-            const offsetDist = 12;
-            const isRight = stepCount % 2 === 0;
-            const offsetX = Math.cos((angle - 180) * (Math.PI / 180)) * (isRight ? offsetDist : -offsetDist);
-            const offsetY = Math.sin((angle - 180) * (Math.PI / 180)) * (isRight ? offsetDist : -offsetDist);
-
-            createPawPrint(x + offsetX, y + offsetY, angle);
-            
-            lastX = x;
-            lastY = y;
-            stepCount++;
-        }
-    });
-
-    function createPawPrint(x, y, angle) {
-        const paw = document.createElement('div');
-        paw.className = 'cat-paw-trail';
-        paw.style.left = `${x - 20}px`; // Centering 40px width
-        paw.style.top = `${y - 20}px`;
-        paw.style.transform = `rotate(${angle}deg)`;
-        
-        paw.innerHTML = `
-            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="fill: #E8727A; width: 100%; height: 100%;">
-                <circle cx="50" cy="18" r="15"/>
-                <circle cx="18" cy="45" r="13"/>
-                <circle cx="82" cy="45" r="13"/>
-                <circle cx="50" cy="82" r="28"/>
-            </svg>
-        `;
-        
-        document.body.appendChild(paw);
-
-        // Remove from DOM after 3 seconds (as requested)
-        setTimeout(() => {
-            paw.remove();
-        }, 3000);
-    }
+    // Footprint trail cursor effect removed.
 });
