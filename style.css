@@ -804,6 +804,7 @@ section {
         text-align: center;
         align-items: center;
         margin-left: 0 !important; /* Reset staggered layout */
+        white-space: normal;
     }
 
     .step-num {
