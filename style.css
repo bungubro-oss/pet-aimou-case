@@ -913,3 +913,13 @@ section {
 .footer-links a:hover {
     border-bottom: 1px solid var(--color-text-main);
 }
+
+/* PCのみで改行し、スマホでは改行させないためのクラス */
+.br-pc {
+    display: inline;
+}
+@media (max-width: 768px) {
+    .br-pc {
+        display: none;
+    }
+}
