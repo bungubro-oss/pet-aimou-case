@@ -796,6 +796,18 @@ section {
     .product-card h3 {
         font-size: 1.5rem;
     }
+
+    /* スマホ表示ではタップ時の画像切り替え（ガタガタしたループ）を無効化 */
+    .product-card:hover .product-image,
+    .product-card:hover .product-note {
+        display: block !important;
+    }
+    .product-card:hover .product-variations {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
     
     .step, 
     .step:nth-child(n) {
