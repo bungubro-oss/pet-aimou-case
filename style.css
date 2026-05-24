@@ -797,16 +797,17 @@ section {
         font-size: 1.5rem;
     }
 
-    /* スマホ表示ではタップ時の画像切り替え（ガタガタしたループ）を無効化 */
-    .product-card:hover .product-image,
-    .product-card:hover .product-note {
+    /* スマホ表示では最初からメイン画像とバリエーション画像を両方美しく常時表示する（ガタガタ防止・視認性向上） */
+    .product-card .product-image,
+    .product-card .product-note {
         display: block !important;
     }
-    .product-card:hover .product-variations {
-        max-height: 0 !important;
-        opacity: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+    .product-card .product-variations {
+        max-height: none !important;
+        opacity: 1 !important;
+        margin-top: 2rem !important;
+        margin-bottom: 1.5rem !important;
+        overflow: visible !important;
     }
     
     .step, 
