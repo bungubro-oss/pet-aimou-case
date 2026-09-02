@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use - NekoBIN（ねこビン）| 愛するペットの毛を、思い出に変える。</title>
+    <meta name="description" content="NekoBIN（ねこビン）とデジタルフォト版（NFC機能）の詳しい使い方をご紹介します。大切なペットの毛を保管し、いつでも思い出に触れられる体験を。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=3">
+    <style>
+        .usage-hero {
+            padding: 12rem 0 8rem;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('premium_monotone_cat_hero_1777551251854.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+        .usage-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            font-family: var(--font-serif);
+        }
+        .usage-hero p {
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+        .usage-page-section {
+            padding: 6rem 0;
+            background: var(--color-white);
+        }
+        .usage-page-section:nth-child(even) {
+            background: var(--color-bg);
+        }
+        .usage-page-section h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--color-text-sub);
+            font-family: var(--font-serif);
+        }
+
+        /* 取扱説明書風のレイアウト */
+        .manual-steps {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .manual-step {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(184, 134, 11, 0.1);
+        }
+        /* 偶数番目は画像を右側に配置 */
+        .manual-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .manual-step-img {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .manual-step-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 3px solid var(--color-bg);
+        }
+        .manual-step-content {
+            flex: 1.5;
+        }
+        .manual-step-num {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .manual-step-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--color-text-sub);
+            margin-bottom: 1rem;
+        }
+        .manual-step-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+        .nfc-icon-wrapper {
+            background: var(--color-bg);
+            padding: 3rem;
+            border-radius: 50%;
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .nfc-icon-wrapper svg {
+            width: 80px;
+            height: 80px;
+            color: var(--color-accent);
+            opacity: 0.8;
+        }
+        
+        /* スマホ向けの調整 */
+        @media (max-width: 768px) {
+            .manual-step, .manual-step:nth-child(even) {
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+            .manual-step-img {
+                width: 100%;
+                min-width: auto;
+            }
+            .manual-step-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header id="header">
+        <nav class="nav-container">
+            <div class="logo">NekoBIN</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#story">Story</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="usage.html">How to Use</a></li>
+                <li><a href="gift.html">Gift</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="vision.html">Vision</a></li>
+                <li><a href="index.html#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="usage-hero fade-in">
+            <div class="container">
+                <h1>How to Use</h1>
+                <p>NekoBINの取扱説明書</p>
+            </div>
+        </section>
+
+        <!-- Normal NekoBIN Usage -->
+        <section class="usage-page-section animate-on-scroll">
+            <div class="container">
+                <h2>通常のNekoBINの楽しみ方</h2>
+                <div class="manual-steps">
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <img src="step1_brushing.png" alt="ブラッシング">
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 01</span>
+                            <h4 class="manual-step-title">ブラッシング</h4>
+                            <p class="manual-step-desc">いつも通り、愛するペットを優しくブラッシングしてあげてください。<br>大切なふれあいの時間から、NekoBINの物語は始まります。</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <img src="step2_fur_palm.png" alt="毛を集める">
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 02</span>
+                            <h4 class="manual-step-title">毛を集める</h4>
+                            <p class="manual-step-desc">ブラシに残ったふわふわの毛を、手のひらで優しく丸めます。<br>指先に残る温もりを感じながら、形を整えてください。</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <img src="step3_put_in.png" alt="ビンに入れる">
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 03</span>
+                            <h4 class="manual-step-title">ビンに入れる</h4>
+                            <p class="manual-step-desc">丸めた毛とあなたの想いを一緒に、そっとNekoBINの中に閉じ込めます。<br>蓋をしっかり閉めれば、世界に一つだけの宝物の完成です。</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <img src="step4_decorate.png" alt="飾る">
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 04</span>
+                            <h4 class="manual-step-title">お部屋に飾る</h4>
+                            <p class="manual-step-desc">お気に入りの場所や、いつでも目が届く場所に飾ってください。<br>インテリアに馴染むデザインが、日常に優しい彩りを与えます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NFC Tag Usage -->
+        <section class="usage-page-section animate-on-scroll">
+            <div class="container">
+                <h2>デジタルフォト版（NFC機能）の使い方</h2>
+
+                <p style="text-align: center; margin-bottom: 3rem; color: var(--color-text-main); font-size: 1.1rem; line-height: 1.8;">
+                    ※ デジタルフォト版をご購入いただいたお客様向けの機能です。<br>
+                    スマートフォンをかざすだけで、いつでも愛するペットの写真や動画が蘇ります。
+                </p>
+
+                <div class="manual-steps">
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <div class="nfc-icon-wrapper">
+                                <!-- App Install Icon -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 01</span>
+                            <h4 class="manual-step-title">アプリのインストール</h4>
+                            <p class="manual-step-desc">スマートフォンにスマートフォンアプリ「NFC Tools」を入れる</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <div class="nfc-icon-wrapper">
+                                <!-- Folder Icon -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 02</span>
+                            <h4 class="manual-step-title">保存先フォルダの作成</h4>
+                            <p class="manual-step-desc">ご自身のPCでGoogleドライブなど、写真の保存先フォルダを作成してください。</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <div class="nfc-icon-wrapper">
+                                <!-- Link Icon -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 03</span>
+                            <h4 class="manual-step-title">URLのコピー</h4>
+                            <p class="manual-step-desc">作成したフォルダのURLをコピーしてください。</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <div class="nfc-icon-wrapper">
+                                <!-- NFC Tap Icon -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 04</span>
+                            <h4 class="manual-step-title">URLの書き込み</h4>
+                            <p class="manual-step-desc">スマートフォンアプリで「書く」を押し、作成したフォルダのURLをペースト（貼り付け）してください。</p>
+                        </div>
+                    </div>
+                    <div class="manual-step">
+                        <div class="manual-step-img">
+                            <div class="nfc-icon-wrapper">
+                                <!-- Image Save Icon -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="manual-step-content">
+                            <span class="manual-step-num">STEP 05</span>
+                            <h4 class="manual-step-title">写真の保存</h4>
+                            <p class="manual-step-desc">PC、またはスマートフォンで、指定のフォルダに写真を保存してください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">NekoBIN</div>
+                <div class="footer-links">
+                    <a href="index.html#story">Story</a>
+                    <a href="index.html#products">Products</a>
+                    <a href="usage.html">How to Use</a>
+                    <a href="gift.html">Gift</a>
+                    <a href="impact.html">Impact</a>
+                    <a href="vision.html">Vision</a>
+                    <a href="https://lin.ee/scohhF7" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.4rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="#06C755"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.55 8.845 8.358 9.58-.32.969-1.026 2.92-1.246 3.618-.086.275.025.405.244.31 2.378-1.024 6.78-3.774 9.245-5.698C21.737 16.27 24 13.565 24 10.304z"/></svg>
+                        Contact (LINE)
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2026 NekoBIN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
