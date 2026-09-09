@@ -1,0 +1,3151 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta property="fb:admins" content="691008785" />
+<meta name="keywords" content="ビジタッチ,NFCタグ,印刷,使い方,設定方法">
+<meta name="description" content="『ビジタッチ』にアプリを介してアクションを設定する方法をご紹介！NFCツールというアプリを使ってリンク先情報の上書きやパスワードなど設定できます。">
+<meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
+
+<!-- Google Tag Manager 20230306sato-->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TR5V7MH');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="preload" href="../assets/common/css/import_style.css?20240620" as="style">
+<link rel="stylesheet" href="../assets/common/css/import_style.css?20240620">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script defer src="../assets/common/js/jquery.slidescroll.js" type="text/javascript"></script>
+<script defer src="../assets/common/js/qaTab.js" type="text/javascript"></script>
+
+<meta name="google-site-verification" content="8_pNtxKqQ_8ctMBnGlomKOb8RKmQk3JjoxgLclO82pk" />
+<title>ビジタッチ推奨アプリ【NFC Tools】の使い方</title>
+
+<SCRIPT language="JavaScript">
+<!--
+// マウスを上に置くと画像を入れ替える(画像を先に読み込む)
+// 入れ替える画像
+img = new Array("img2/top_btn1_1.gif","img2/top_btn1_2.gif","img2/top_btn2_1.gif","img2/top_btn2_2.gif","img2/top_btn3_1.gif","img2/top_btn3_2.gif");
+bfImg = new Array();
+for(i=0; i<img.length; i++) {
+  bfImg[i] = new Image();
+  bfImg[i].src = img[i];
+}
+//-->
+</SCRIPT>
+
+
+
+
+	<link rel="preload" href="../assets/common/css/sma_style.css" as="style">
+	<link rel="preload" href="../assets/common/css/pc_style.css" as="style">
+
+	<link rel="stylesheet" href="../assets/common/css/sma_style.css" media="screen and (max-width:767px)" onload="this.media='all'">
+	<link rel="stylesheet" href="../assets/common/css/pc_style.css" media="screen and (min-width:768px)" onload="this.media='all'">
+
+	<script defer type="text/javascript" src="../assets/common/js/jquery.tile.min.js"></script>
+
+	<link rel="stylesheet" href="grid.css" as="style">
+	<link rel="stylesheet" href="index_grid.css" as="style">
+        <link rel="stylesheet" href="../../assets/common/css/info-answer-box.css" as="style">
+        <link rel="stylesheet" href="../assets/common/css/info-cta-3point.css" as="style">
+
+
+
+
+	<!-- 価格自動設定スクリプト -->
+	<script defer type="text/javascript" src="../size/price.js"></script>
+
+<script type="application/javascript">
+$(function(){
+    $('section#price dl.table dt,section#price dl.table dd').tile();
+		$('section#price dl.option dt,section#price dl.option dd').tile();
+		$('section#deadline dl dt,section#deadline dl dd').tile();
+		$('section#choice .box_wrap .box .box_inner .exp').tile();
+		$('section#choice .box_wrap .box .box_inner').tile();
+});
+</script>
+
+</head>
+
+
+<body>
+
+<div id="wrap">
+
+
+
+<div id="container">
+<div id="container_inner">
+
+<!-- HEADER -->
+	<script>
+(function(c,l,a,r,i,t,y){
+	c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "7lhlyusrpb");
+
+console.log(location.href);
+
+$(function () {
+	// $(document).on("click", "a[href*='cart_in.php']", function () {
+    //     const $a = $(this);
+	// 	$a.prop("disabled", true);
+	// 	$a.css("pointer-events", "none");
+    //     setTimeout(function () {
+	// 		$a.css("pointer-events", null);
+    //     }, 5000);
+	// });
+
+	$.ajax({
+		url: "/order/mypage.php",
+		cache: false
+	}).done(function (html) {
+		if (html.indexOf("ログイン画面") != -1) {
+			$(".mypage").show();
+			$(".user_entry").show();
+		} else {
+			$(".user_entry").remove();
+			var src = $(".mypage img").attr("src").replace("icon_login.png", "icon_human.png");
+			$(".mypage img").attr("src", src);
+			$(".mypage").show();
+		}
+	})
+
+	var company_no = '';
+	console.log(company_no);
+	var $btn_cart = $(".header_btn_cart");
+	if (company_no != "") {
+		if (location.href.indexOf("card_user_order_list.php") != -1) {
+			$btn_cart.click(function () {
+				$(".btn_show_cart").click();
+			});
+		} else {
+			var folders = {
+				'1': '',
+				'9': 'softcreate/'
+			}
+			var folder = folders[company_no];
+			$btn_cart.attr("href", "/order/" + folder + "card_user_order_list.php?showcart");
+		}
+	} else {
+		$btn_cart.attr("href", "/order/cart.php");
+	}
+});
+</script>
+<section id="header">
+<!-- Google Tag Manager (noscript)20230306sato -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR5V7MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<h1>NFC Toolsの使い方｜ビジタッチ用NFCタグへの書き込み手順</h1>
+
+<div class="head-title-box">	
+	<a href="https://visipri.com/">
+		<img src="../assets/common/img/top_ttl.gif" alt="24時間年中無休のパネル印刷/ポスター印刷" width="436" height="92" />
+	</a>
+</div>
+
+<div class="mo_only">
+	<div class="m_o_icon mypage" style="display: none;">
+		<a href="../../order/mypage.php" class="icon-login">
+			<img src="../assets/common/img/icon_login.png" alt="マイページ" width="100" height="100">
+			<span>マイページ</span>
+		</a>
+	</div>
+	<div class="m_o_icon user_entry" style="display: none;">
+		<a href="../../order/logon.php?type=user" class="icon-new_account">
+			<img src="../assets/common/img/icon_human.png" alt="会員登録" width="100" height="100">
+			<span>会員登録</span>
+		</a>
+	</div>
+</div>
+
+<div class="head-info-box mo_none">
+	<div class="mail-box">
+		<span>メールでのお問合せ</span>
+		<a href="mailto:visipri@visia.co.jp">visipri@visia.co.jp</a>
+	</div><!--email-->
+	<div class="allarea-tel-box">
+		<div>
+			<span>電話でのお問合せ（通話料無料：全国）</span>
+			<a href="tel:08009191910">0800-91-91-910</a>
+		</div>
+		<div>24時間<br />年中無休</div>
+	</div><!--allarea-tel-box-->
+	
+	<div class="region-tel-box">
+		<div>（東京）<a href="tel:0339748220"><span>03</span>-3974-8220</a>  （大阪）<a href="tel:0665337188"><span>06</span>-6533-7188</a></div>
+	</div>
+	
+	<ul class="h_login_box">
+		<li class="h_login_box_01">
+			<a href="#" class="header_btn_cart">
+				<img src="/share/images/icon_cart.png" alt="カート" width="22" height="22" />
+				<span>カート</span>
+							</a>
+		</li>
+		<li class="h_login_box_01">
+			<a href="../../order/mypage.php" class="icon-login">
+				<img src="../assets/common/img/icon_login.png" alt="マイページ" width="25" height="25" />
+				<span>ログイン</span>
+			</a>
+		</li>
+		<li class="h_login_box_01 par10">
+			<a href="../../order/logon.php?type=user" class="icon-new_account">
+				<img src="../assets/common/img/icon_human.png" alt="会員登録" width="25" height="25" />
+				<span>会員登録</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<div class="trigger mo_only">
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+
+</section>
+
+<div class="mo_only">
+	<style>
+/* 商品一覧アコーディオンメニュー（スマホのみ表示） */
+/* common.cssの #navigation ul li { display: block; } を上書き */
+#navigation ul li.nav_accordion {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+/* PC版: nav_accordionの後ろのセパレータ(|)を非表示 */
+#navigation ul li.nav_accordion::after,
+#navigation ul li.nav_accordion + li::before {
+    display: none !important;
+    content: none !important;
+}
+@media screen and (max-width: 768px) {
+    /* 親ulに上部パディングを追加 */
+    .mo_only #navigation ul {
+        padding-top: 8px;
+    }
+    #navigation ul li.nav_accordion {
+        display: block !important;
+        visibility: visible;
+        height: auto;
+        background: #fff;
+        /* フローティング効果 */
+        margin: 0 2px 8px 2px;
+        padding: 0;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+    }
+}
+.nav_accordion_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px 9px 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav_accordion_header:hover {
+    background: #f5f5f5;
+}
+.nav_accordion_toggle {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+.nav_accordion_toggle.open {
+    transform: rotate(180deg);
+}
+.nav_accordion_content {
+    display: none;
+    background: #f5f5f5;
+}
+.nav_accordion_content.show {
+    display: block;
+}
+/* グループ（第2階層） */
+.nav_group {
+    border-bottom: 1px solid #ddd;
+}
+.nav_group:last-child {
+    border-bottom: none;
+}
+.nav_group_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px 9px 20px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.nav_group_header:hover {
+    background: #eee;
+}
+.nav_group_toggle {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+.nav_group_toggle.open {
+    transform: rotate(180deg);
+}
+.nav_group_content {
+    display: none;
+    background: #fff;
+}
+.nav_group_content.show {
+    display: block;
+}
+/* 商品リンク（第3階層） - common.cssの .mo_only #navigation a を上書き */
+.mo_only #navigation .nav_product_link {
+    display: block;
+    padding: 9px 10px 9px 40px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    position: relative;
+}
+.mo_only #navigation .nav_product_link:hover {
+    background: #f5f5f5;
+}
+</style>
+
+<section id="navigation">
+<ul>
+<!-- 商品一覧（アコーディオンメニュー） -->
+<li class="nav_accordion">
+    <div class="nav_accordion_header" onclick="toggleNavAccordion(this)">
+        <span>商品一覧</span>
+        <span class="nav_accordion_toggle">▼</span>
+    </div>
+    <div class="nav_accordion_content">
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>紙製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/products/poster/" class="nav_product_link">ポスター</a>
+                <a href="/gakkai/" class="nav_product_link">学会ポスター</a>
+                <a href="/tanzaku-poster/" class="nav_product_link">短冊ポスター</a>
+                <a href="/kamislogan/" class="nav_product_link">紙スローガン</a>
+                <a href="/size/namecard/" class="nav_product_link">名刺</a>
+                <a href="/size/postcard/" class="nav_product_link">はがき</a>
+                <a href="/size/fryer/" class="nav_product_link">チラシ・フライヤー</a>
+                <a href="/oban-print/" class="nav_product_link">大判印刷</a>
+                <a href="/tracingpaper/" class="nav_product_link">トレーシングペーパー印刷</a>
+                <a href="/size/lami/" class="nav_product_link">ラミネート加工</a>
+                <a href="/products/poster/syohin_pouch.php" class="nav_product_link">パウチ加工</a>
+                <a href="/shoujyou/" class="nav_product_link">表彰状・賞状印刷</a>
+                <a href="/posterframe/" class="nav_product_link">フレーム付きポスター印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>布製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/material/tarpaulin/" class="nav_product_link">ターポリン印刷</a>
+                <a href="/material/tromat/" class="nav_product_link">トロマット印刷</a>
+                <a href="/oudanmaku/" class="nav_product_link">横断幕印刷</a>
+                <a href="/kensuimaku/" class="nav_product_link">懸垂幕印刷</a>
+                <a href="/ouenmaku/" class="nav_product_link">応援幕印刷</a>
+                <a href="/products/tapestry/" class="nav_product_link">タペストリー印刷</a>
+                <a href="/products/bannerstand/" class="nav_product_link">バナースタンド印刷</a>
+                <a href="/products/rollupbanner/" class="nav_product_link">ロールアップバナー印刷</a>
+                <a href="/nobori/" class="nav_product_link">のぼり</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>フィルム・シール</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/backlight-film/" class="nav_product_link">バックライトフィルム印刷</a>
+                <a href="/seal/" class="nav_product_link">大型シール印刷</a>
+                <a href="/sticker/" class="nav_product_link">ステッカー印刷</a>
+                <a href="/wallpaper/" class="nav_product_link">壁紙・壁面装飾</a>
+                <a href="/products/magnet/" class="nav_product_link">マグネット印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>パネル製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/products/panel/" class="nav_product_link">パネル印刷・パネル加工</a>
+                <a href="/freecut/" class="nav_product_link">フリーカットパネル印刷</a>
+                <a href="/toshindai/" class="nav_product_link">等身大パネル</a>
+                <a href="/tenjipanel/" class="nav_product_link">展示パネル</a>
+                <a href="/photo_panel/" class="nav_product_link">写真パネル</a>
+                <a href="/use/logokanban/" class="nav_product_link">ロゴ看板</a>
+                <a href="/grandprix-panel/" class="nav_product_link">賞品パネル・目録パネル</a>
+                <a href="/plaque_panel/" class="nav_product_link">表彰楯</a>
+                <a href="/tsurikanban/" class="nav_product_link">吊り看板の印刷</a>
+                <a href="/flip/" class="nav_product_link">フリップ印刷</a>
+                <a href="/sign/" class="nav_product_link">サイン看板</a>
+                <a href="/sns_panel/" class="nav_product_link">SNSパネル</a>
+                <a href="/pop/" class="nav_product_link">POP</a>
+                <a href="/menu/" class="nav_product_link">メニュー看板</a>
+                <a href="/salesign/" class="nav_product_link">セール看板</a>
+                <a href="/back-panel/" class="nav_product_link">記者会見用バックボード</a>
+                <a href="/welcomeboard/" class="nav_product_link">ウェルカムボード</a>
+                <a href="/caption-panel/" class="nav_product_link">キャプション</a>
+                <a href="/topboard/" class="nav_product_link">トップボード</a>
+                <a href="/specboard/" class="nav_product_link">スペックボード</a>
+                <a href="/products/alumiframepanel/" class="nav_product_link">アルミフレーム付きパネル</a>
+                <a href="/alpolic_panel/" class="nav_product_link">アルミ複合板（アルポリ）</a>
+                <a href="/flosta/" class="nav_product_link">フラスタ・フラワースタンドパネル</a>
+                <a href="/giantcard/" class="nav_product_link">巨大トランプ・巨大カルタ印刷</a>
+                <a href="/photobooth/" class="nav_product_link">フォトブース・フォトスポット</a>
+                <a href="/woodpanel/" class="nav_product_link">木製パネル印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>アクリル製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/products/acrylic_index.php" class="nav_product_link">アクリル印刷</a>
+                <a href="/products/acrylic_stand/" class="nav_product_link">アクスタ</a>
+                <a href="/products/acrylic_keyholder/" class="nav_product_link">アクキー</a>
+                <a href="/products/acrylic_diorama/" class="nav_product_link">アクリルジオラマ</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>アパレル製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/tshirts/" class="nav_product_link">Tシャツ印刷</a>
+                <a href="/apron/" class="nav_product_link">エプロン印刷</a>
+                <a href="/totebag/" class="nav_product_link">トートバッグ印刷</a>
+                <a href="/sweatshirt/" class="nav_product_link">スウェット印刷</a>
+                <a href="/hoodie/" class="nav_product_link">パーカー印刷</a>
+                <a href="/polo-shirt/" class="nav_product_link">ポロシャツ印刷</a>
+                <a href="/photo-wear/" class="nav_product_link">フォトウェア印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>その他商品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/game-playmat/" class="nav_product_link">カードゲーム用プレイマット印刷</a>
+                <a href="/mousepad/" class="nav_product_link">マウスパッド印刷</a>
+                <a href="/a-stand/" class="nav_product_link">A型看板（非LED）</a>
+                <a href="/led-panel/" class="nav_product_link">LEDパネル</a>
+                <a href="/visitouch/" class="nav_product_link">ビジタッチ（NFCタグ）印刷</a>
+                <a href="/pvc-card/" class="nav_product_link">PVCカード・プラスチックカード</a>
+                <a href="/floorsign/" class="nav_product_link">フロアサイン</a>
+                <a href="/bigboard_stand/" class="nav_product_link">ビッグボードスタンド</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>業界別</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/use/dojin/" class="nav_product_link">同人イベント印刷</a>
+                <a href="/real_estate_panel/" class="nav_product_link">不動産パネル印刷</a>
+                <a href="/use/restaurant/" class="nav_product_link">飲食店向けポスター印刷</a>
+                <a href="/use/wedding/" class="nav_product_link">ウェディング・ブライダル印刷</a>
+                <a href="/use/inbound/" class="nav_product_link">インバウンド向け印刷</a>
+                <a href="/use/game/" class="nav_product_link">パチンコ業界向け印刷</a>
+                <a href="/use/night/" class="nav_product_link">ナイト業界向け印刷</a>
+                <a href="/election-poster/" class="nav_product_link">選挙ポスター・為書き印刷</a>
+                <a href="/pet_print/" class="nav_product_link">ペット印刷</a>
+            </div>
+        </div>
+    </div>
+</li>
+<li><a href="https://visipri.com/">ＴＯＰ</a></li>
+<li><a href="https://visipri.com/intro01_whatsvisipri.php">ビジプリとは？</a></li>
+<li><a href="https://visipri.com/size/">料金表</a></li>
+<li><a href="https://visipri.com/intro02_nouki.php">納期･配送</a></li>
+<li><a href="https://visipri.com/intro03_soryo.php">送料</a></li>
+<li><a href="https://visipri.com/intro04_oshiharai.php">お支払方法</a></li>
+<li><a href="https://visipri.com/dataguide/">入稿方法(データ)</a></li>
+<li><a href="https://visipri.com/intro06_faq.php">ＦＡＱ</a></li>
+<li><a href="https://visipri.com/access.php">アクセス</a></li>
+<li><a href="https://visipri.com/contact/contact.php">お問合せ</a></li>
+</ul>
+</section>
+
+<script>
+// 商品一覧アコーディオン（第1階層）のトグル
+function toggleNavAccordion(element) {
+    var content = element.nextElementSibling;
+    var toggle = element.querySelector('.nav_accordion_toggle');
+    
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        toggle.classList.remove('open');
+    } else {
+        content.classList.add('show');
+        toggle.classList.add('open');
+    }
+}
+
+// 商品グループ（第2階層）のトグル
+function toggleNavGroup(element) {
+    var content = element.nextElementSibling;
+    var toggle = element.querySelector('.nav_group_toggle');
+    
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        toggle.classList.remove('open');
+    } else {
+        content.classList.add('show');
+        toggle.classList.add('open');
+    }
+}
+</script></div>
+
+
+<!--▼フロートカート(PCスマホ)＆TELボタン(スマホ)-->
+<style>
+	.cart-badge {
+		position: absolute;
+		top: -8px;
+		right: -12px;
+		padding: 3px 5px 2px 5px !important;
+		border-radius: 30px;
+		color: #fff;
+		font-size: 12px !important;
+		font-weight: bold;
+		background: #ff4500 !important;
+		margin: 0 3px;
+		line-height: 1;
+		display: inline-block;
+		width: 17px !important;
+		box-sizing: border-box !important;
+	}
+    .float_cart_btn {
+        display: block;
+        position: fixed;
+        right: 0;
+        bottom: 100px;
+        z-index: 5;
+        width: 80px;
+        padding: 4px 4px 7px 7px;
+        background: #d30101;
+        border-radius: 10px 0 0 10px;
+        text-align: center;
+        box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+        line-height: 1;
+    }
+	.float_cart_btn a { color: #fff; position: relative;}
+	.float_cart_btn img { width: 40px; height: auto; margin: 0 auto 3px auto;}
+	.float_cart_btn_txt{ font-size: 12px;}
+	.float_cart_btn .cart-badge {top: -5px;	right: 5px;}
+	
+	@media screen and (max-width: 768px){
+		.float_cart_btn{ display: block; position: fixed; right: 0; bottom: 15px; z-index: 5; width: 65px; padding: 4px 4px 7px 7px; background: #d30101; border-radius: 10px 0 0 10px; text-align: center; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5); line-height: 1;}
+		.float_cart_btn a { color: #fff; position: relative;}
+		.float_cart_btn img { width: 32px; height: auto; margin: 0 auto;}
+		.float_cart_btn_txt{ font-size: 10px;}
+		.float_cart_btn .cart-badge {
+			top: -5px;
+			right: 5px;
+		}
+	}
+</style>
+<div class="float_cart_btn">
+	<a href="https://visipri.com/order/cart.php">
+		<img src="https://visipri.com/img/cart_icon_W.svg" alt="カートボタン" width="150" height="150">
+		<div class="float_cart_btn_txt">カート確認</div>
+			</a>
+</div>
+<style>
+	.float_tel_btn{ display: none;}
+	@media screen and (max-width: 768px){
+		.float_tel_btn{ display: block; position: fixed; right: 0; bottom: 80px; z-index: 5; width: 65px; padding: 4px 4px 7px 7px; background: #29ABE2; border-radius: 10px 0 0 10px; text-align: center; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5); line-height: 1;}
+		.float_tel_btn a { color: #fff; position: relative;}
+		.float_tel_btn img { width: 24px; height: auto; margin: 4px auto 4px 0;}
+		.float_tel_btn_txt{ font-size: 10px;}
+		#goto_top{ display: none !important;}
+	}
+</style>
+
+<div class="float_tel_btn">
+	<a href="tel:08009191910">
+		<img src="https://visipri.com/img/tel_icon_W.svg" alt="お問合せボタン" width="150" height="150">
+		<div class="float_tel_btn_txt">お問合せ</div>
+	</a>
+</div>
+<!--▲フロートカート(PCスマホ)＆TELボタン(スマホ)-->
+
+<style>
+/**fix 250311 ヘッダーh1まわり変更**********************/
+
+#header .head-title-box img {
+	max-width: 100%;
+	width: 165px;
+}
+		
+@media screen and (min-width: 768px) {
+    #header .head-title-box img {
+        width: auto;
+    }
+}	
+@media screen and (min-width: 768px) {
+    #header {
+		flex-wrap: wrap; padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+	#header h1 {
+		padding: 3px 10px 0 10px;
+        line-height: 1.6; overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        box-sizing: border-box; 
+		font-size: 11px;
+	}
+
+	
+	#header .trigger { top: 24px !important;}
+	#header { height: 65px;}
+	#header .head-title-box { padding:2px 0px 5px 10px;}
+	.mo_only #navigation { top: 65px;}
+	main #right_column { margin-top: 65px !important;}
+}
+
+.mo_only{ display: none;}
+@media screen and (max-width: 768px){
+	.mo_only{position: absolute; top: 22px !important; right: 56px; font-size: 10px; display: flex; flex-wrap: wrap; align-items: center; align-content: center; justify-content:space-between;}
+	.m_o_icon{ width: 53px; text-align: center; line-height: 1.0;}
+	.m_o_icon span{ display: block;}
+	.m_o_icon img{ width: 25px; height: auto;}
+}
+
+</style>
+
+<!-- ▼20260701 SiteNavigationElement -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SiteNavigationElement",
+"hasPart": [
+{
+"@type": "WebPage",
+"name": "ＴＯＰ",
+"url": "https://visipri.com/"
+},
+{
+"@type": "WebPage",
+"name": "ビジプリとは？",
+"url": "https://visipri.com/intro01_whatsvisipri.php"
+},
+{
+"@type": "WebPage",
+"name": "料金表",
+"url": "https://visipri.com/size/"
+},
+{
+"@type": "WebPage",
+"name": "納期･配送",
+"url": "https://visipri.com/intro02_nouki.php"
+},
+{
+"@type": "WebPage",
+"name": "送料",
+"url": "https://visipri.com/intro03_soryo.php"
+},
+{
+"@type": "WebPage",
+"name": "お支払方法",
+"url": "https://visipri.com/intro04_oshiharai.php"
+},
+{
+"@type": "WebPage",
+"name": "入稿方法(データ)",
+"url": "https://visipri.com/dataguide/"
+},
+{
+"@type": "WebPage",
+"name": "ＦＡＱ",
+"url": "https://visipri.com/intro06_faq.php"
+},
+{
+"@type": "WebPage",
+"name": "アクセス",
+"url": "https://visipri.com/access.php"
+},
+{
+"@type": "WebPage",
+"name": "お問合せ",
+"url": "https://visipri.com/contact/contact.php"
+},
+{
+"@type": "WebPage",
+"name": "販促ポスター印刷",
+"url": "https://visipri.com/hansoku-poster/"
+},
+{
+"@type": "WebPage",
+"name": "スポッターパネル印刷",
+"url": "https://visipri.com/spotterpanel/"
+},
+{
+"@type": "WebPage",
+"name": "チェーン店向けポスター印刷",
+"url": "https://visipri.com/chainstore/"
+},
+{
+"@type": "WebPage",
+"name": "イメージパース印刷",
+"url": "https://visipri.com/imageperth/"
+},
+{
+"@type": "WebPage",
+"name": "和紙ポスター印刷",
+"url": "https://visipri.com/washi_poster/"
+},
+{
+"@type": "WebPage",
+"name": "不動産パネル",
+"url": "https://visipri.com/real_estate_panel/"
+},
+{
+"@type": "WebPage",
+"name": "フォトプロップス",
+"url": "https://visipri.com/photoprops/"
+},
+{
+"@type": "WebPage",
+"name": "郵便局ポスター印刷",
+"url": "https://visipri.com/post_office_poster/"
+},
+{
+"@type": "WebPage",
+"name": "テーブルステッカー印刷",
+"url": "https://visipri.com/table_sticker/"
+},
+{
+"@type": "WebPage",
+"name": "簡易版 記念盾(記念楯)印刷",
+"url": "https://visipri.com/plaque_panel/"
+},
+{
+"@type": "WebPage",
+"name": "入社式・内定式用パネル印刷",
+"url": "https://visipri.com/nyusya_naitei_panel/"
+},
+{
+"@type": "WebPage",
+"name": "スーツケース名札シール印刷",
+"url": "https://visipri.com/luggage_tag_seal/"
+},
+{
+"@type": "WebPage",
+"name": "窓用ステッカー（内貼り）",
+"url": "https://visipri.com/window_inside/"
+},
+{
+"@type": "WebPage",
+"name": "窓用ステッカー（外貼り）",
+"url": "https://visipri.com/window_outside/"
+},
+{
+"@type": "WebPage",
+"name": "カルプ文字",
+"url": "https://visipri.com/karupu_moji/"
+},
+{
+"@type": "WebPage",
+"name": "1枚からのパネル印刷",
+"url": "https://visipri.com/contents/contents02.php"
+},
+{
+"@type": "WebPage",
+"name": "展示会用パネルの制作",
+"url": "https://visipri.com/contents/contents04.php"
+},
+{
+"@type": "WebPage",
+"name": "イベント用パネルの制作",
+"url": "https://visipri.com/contents/contents06.php"
+},
+{
+"@type": "WebPage",
+"name": "1枚からのサイン看板印刷",
+"url": "https://visipri.com/contents/contents12.php"
+},
+{
+"@type": "WebPage",
+"name": "ポスターデザイン",
+"url": "https://visipri.com/contents/contents15.php"
+},
+{
+"@type": "WebPage",
+"name": "ポスターデザイン印刷",
+"url": "https://visipri.com/contents/contents16.php"
+},
+{
+"@type": "WebPage",
+"name": "即日対応大判印刷",
+"url": "https://visipri.com/contents/contents24.php"
+},
+{
+"@type": "WebPage",
+"name": "スピード対応ポスター印刷",
+"url": "https://visipri.com/contents/contents25.php"
+},
+{
+"@type": "WebPage",
+"name": "即日対応ポスター印刷",
+"url": "https://visipri.com/contents/contents26.php"
+},
+{
+"@type": "WebPage",
+"name": "スピード対応パネル印刷",
+"url": "https://visipri.com/contents/contents27.php"
+},
+{
+"@type": "WebPage",
+"name": "結婚式等身大パネル",
+"url": "https://visipri.com/contents/contents33.php"
+},
+{
+"@type": "WebPage",
+"name": "学園祭案内看板",
+"url": "https://visipri.com/contents/contents34.php"
+},
+{
+"@type": "WebPage",
+"name": "1枚からPOP印刷",
+"url": "https://visipri.com/contents/contents36.php"
+},
+{
+"@type": "WebPage",
+"name": "中国語サインパネル印刷",
+"url": "https://visipri.com/contents/contents42.php"
+},
+{
+"@type": "WebPage",
+"name": "パンフレット制作",
+"url": "https://visipri.com/contents/contents44.php"
+},
+{
+"@type": "WebPage",
+"name": "リーフレット制作",
+"url": "https://visipri.com/contents/contents45.php"
+},
+{
+"@type": "WebPage",
+"name": "野立て看板",
+"url": "https://visipri.com/contents/contents2013_23.php"
+},
+{
+"@type": "WebPage",
+"name": "DTP デザイン ポスター",
+"url": "https://visipri.com/contents/contents49.php"
+},
+{
+"@type": "WebPage",
+"name": "DTP デザイン パンフレット",
+"url": "https://visipri.com/contents/contents50.php"
+},
+{
+"@type": "WebPage",
+"name": "DTP デザイン カタログ",
+"url": "https://visipri.com/contents/contents51.php"
+},
+{
+"@type": "WebPage",
+"name": "巻き三つ折り DTP デザイン",
+"url": "https://visipri.com/contents/contents59.php"
+},
+{
+"@type": "WebPage",
+"name": "巻き三つ折り デザイン",
+"url": "https://visipri.com/contents/contents60.php"
+},
+{
+"@type": "WebPage",
+"name": "学会ポスターのデザイン",
+"url": "https://visipri.com/gakkai/design_full.php"
+},
+{
+"@type": "WebPage",
+"name": "A4巻き三つ折り",
+"url": "https://visipri.com/contents/contents61.php"
+},
+{
+"@type": "WebPage",
+"name": "激安大判印刷",
+"url": "https://visipri.com/contents/contents2013_08.php"
+},
+{
+"@type": "WebPage",
+"name": "激安パネル制作",
+"url": "https://visipri.com/contents/contents2013_09.php"
+},
+{
+"@type": "WebPage",
+"name": "激安ポスター印刷",
+"url": "https://visipri.com/contents/contents2013_10.php"
+},
+{
+"@type": "WebPage",
+"name": "療育アイデア",
+"url": "https://visipri.com/contents/contents2013_11.php"
+},
+{
+"@type": "WebPage",
+"name": "合同説明会パネル製作",
+"url": "https://visipri.com/contents/contents2013_13.php"
+},
+{
+"@type": "WebPage",
+"name": "企業理念浸透",
+"url": "https://visipri.com/contents/contents2013_22.php"
+},
+{
+"@type": "WebPage",
+"name": "電飾フィルム",
+"url": "https://visipri.com/contents/contents2013_25.php"
+},
+{
+"@type": "WebPage",
+"name": "短冊ポスター",
+"url": "https://visipri.com/contents/contents2013_26.php"
+},
+{
+"@type": "WebPage",
+"name": "オリジナルカレンダー",
+"url": "https://visipri.com/contents/contents2013_27.php"
+},
+{
+"@type": "WebPage",
+"name": "カタログ制作",
+"url": "https://visipri.com/contents/contents46.php"
+},
+{
+"@type": "WebPage",
+"name": "1枚からのポスター印刷・大判印刷",
+"url": "https://visipri.com/contents/contents2013_18.php"
+},
+{
+"@type": "WebPage",
+"name": "最短3時間でお届け業界最速サイン看板･ロゴ看板",
+"url": "https://visipri.com/contents/contents2013_19.php"
+},
+{
+"@type": "WebPage",
+"name": "急ぎ/緊急のパネル印刷は|24時間年中無休のビジプリ",
+"url": "https://visipri.com/contents/contents2013_20.php"
+},
+{
+"@type": "WebPage",
+"name": "急ぎ/緊急の大判印刷は|24時間年中無休のビジプリ",
+"url": "https://visipri.com/contents/contents2013_21.php"
+},
+{
+"@type": "WebPage",
+"name": "簡体字 繁体字 対応 中国語サインパネル印刷",
+"url": "https://visipri.com/contents/contents43.php"
+},
+{
+"@type": "WebPage",
+"name": "同人誌即売会 パネル・短冊ポスター",
+"url": "https://visipri.com/contents/contents2013_28.php"
+},
+{
+"@type": "WebPage",
+"name": "催事・物産展出店者さま向けパネル",
+"url": "https://visipri.com/contents/contents2013_29.php"
+},
+{
+"@type": "WebPage",
+"name": "サロン・美容院向けポスターパネル",
+"url": "https://visipri.com/contents/contents2013_30.php"
+},
+{
+"@type": "WebPage",
+"name": "【東京23区内】特急名刺印刷",
+"url": "https://visipri.com/express-namecard/"
+},
+{
+"@type": "WebPage",
+"name": "【東京23区内】特急チラシ印刷",
+"url": "https://visipri.com/express-fryer/"
+},
+{
+"@type": "WebPage",
+"name": "【東京23区内】特急はがき印刷",
+"url": "https://visipri.com/express-postcard/"
+},
+{
+"@type": "WebPage",
+"name": "パーソナライズド印刷",
+"url": "https://visipri.com/personalized-print/"
+},
+{
+"@type": "WebPage",
+"name": "プライバシーポリシー",
+"url": "https://visipri.com/privacy.html"
+},
+{
+"@type": "WebPage",
+"name": "運営会社",
+"url": "https://visipri.com/company.html"
+},
+{
+"@type": "WebPage",
+"name": "特定商取引法に基づく表記",
+"url": "https://visipri.com/tokutei.html"
+},
+{
+"@type": "WebPage",
+"name": "ガイドライン",
+"url": "https://visipri.com/guideline.html"
+}
+]
+}
+</script>
+<!-- ▲20260701 SiteNavigationElement --><!-- END. HEADER -->
+
+<!-- NAGIVAGITON -->
+<div class="mo_none">
+	<style>
+/* 商品一覧アコーディオンメニュー（スマホのみ表示） */
+/* common.cssの #navigation ul li { display: block; } を上書き */
+#navigation ul li.nav_accordion {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+/* PC版: nav_accordionの後ろのセパレータ(|)を非表示 */
+#navigation ul li.nav_accordion::after,
+#navigation ul li.nav_accordion + li::before {
+    display: none !important;
+    content: none !important;
+}
+@media screen and (max-width: 768px) {
+    /* 親ulに上部パディングを追加 */
+    .mo_only #navigation ul {
+        padding-top: 8px;
+    }
+    #navigation ul li.nav_accordion {
+        display: block !important;
+        visibility: visible;
+        height: auto;
+        background: #fff;
+        /* フローティング効果 */
+        margin: 0 2px 8px 2px;
+        padding: 0;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+    }
+}
+.nav_accordion_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px 9px 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav_accordion_header:hover {
+    background: #f5f5f5;
+}
+.nav_accordion_toggle {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+.nav_accordion_toggle.open {
+    transform: rotate(180deg);
+}
+.nav_accordion_content {
+    display: none;
+    background: #f5f5f5;
+}
+.nav_accordion_content.show {
+    display: block;
+}
+/* グループ（第2階層） */
+.nav_group {
+    border-bottom: 1px solid #ddd;
+}
+.nav_group:last-child {
+    border-bottom: none;
+}
+.nav_group_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px 9px 20px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.nav_group_header:hover {
+    background: #eee;
+}
+.nav_group_toggle {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+.nav_group_toggle.open {
+    transform: rotate(180deg);
+}
+.nav_group_content {
+    display: none;
+    background: #fff;
+}
+.nav_group_content.show {
+    display: block;
+}
+/* 商品リンク（第3階層） - common.cssの .mo_only #navigation a を上書き */
+.mo_only #navigation .nav_product_link {
+    display: block;
+    padding: 9px 10px 9px 40px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    position: relative;
+}
+.mo_only #navigation .nav_product_link:hover {
+    background: #f5f5f5;
+}
+</style>
+
+<section id="navigation">
+<ul>
+<!-- 商品一覧（アコーディオンメニュー） -->
+<li class="nav_accordion">
+    <div class="nav_accordion_header" onclick="toggleNavAccordion(this)">
+        <span>商品一覧</span>
+        <span class="nav_accordion_toggle">▼</span>
+    </div>
+    <div class="nav_accordion_content">
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>紙製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/products/poster/" class="nav_product_link">ポスター</a>
+                <a href="/gakkai/" class="nav_product_link">学会ポスター</a>
+                <a href="/tanzaku-poster/" class="nav_product_link">短冊ポスター</a>
+                <a href="/kamislogan/" class="nav_product_link">紙スローガン</a>
+                <a href="/size/namecard/" class="nav_product_link">名刺</a>
+                <a href="/size/postcard/" class="nav_product_link">はがき</a>
+                <a href="/size/fryer/" class="nav_product_link">チラシ・フライヤー</a>
+                <a href="/oban-print/" class="nav_product_link">大判印刷</a>
+                <a href="/tracingpaper/" class="nav_product_link">トレーシングペーパー印刷</a>
+                <a href="/size/lami/" class="nav_product_link">ラミネート加工</a>
+                <a href="/products/poster/syohin_pouch.php" class="nav_product_link">パウチ加工</a>
+                <a href="/shoujyou/" class="nav_product_link">表彰状・賞状印刷</a>
+                <a href="/posterframe/" class="nav_product_link">フレーム付きポスター印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>布製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/material/tarpaulin/" class="nav_product_link">ターポリン印刷</a>
+                <a href="/material/tromat/" class="nav_product_link">トロマット印刷</a>
+                <a href="/oudanmaku/" class="nav_product_link">横断幕印刷</a>
+                <a href="/kensuimaku/" class="nav_product_link">懸垂幕印刷</a>
+                <a href="/ouenmaku/" class="nav_product_link">応援幕印刷</a>
+                <a href="/products/tapestry/" class="nav_product_link">タペストリー印刷</a>
+                <a href="/products/bannerstand/" class="nav_product_link">バナースタンド印刷</a>
+                <a href="/products/rollupbanner/" class="nav_product_link">ロールアップバナー印刷</a>
+                <a href="/nobori/" class="nav_product_link">のぼり</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>フィルム・シール</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/backlight-film/" class="nav_product_link">バックライトフィルム印刷</a>
+                <a href="/seal/" class="nav_product_link">大型シール印刷</a>
+                <a href="/sticker/" class="nav_product_link">ステッカー印刷</a>
+                <a href="/wallpaper/" class="nav_product_link">壁紙・壁面装飾</a>
+                <a href="/products/magnet/" class="nav_product_link">マグネット印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>パネル製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/products/panel/" class="nav_product_link">パネル印刷・パネル加工</a>
+                <a href="/freecut/" class="nav_product_link">フリーカットパネル印刷</a>
+                <a href="/toshindai/" class="nav_product_link">等身大パネル</a>
+                <a href="/tenjipanel/" class="nav_product_link">展示パネル</a>
+                <a href="/photo_panel/" class="nav_product_link">写真パネル</a>
+                <a href="/use/logokanban/" class="nav_product_link">ロゴ看板</a>
+                <a href="/grandprix-panel/" class="nav_product_link">賞品パネル・目録パネル</a>
+                <a href="/plaque_panel/" class="nav_product_link">表彰楯</a>
+                <a href="/tsurikanban/" class="nav_product_link">吊り看板の印刷</a>
+                <a href="/flip/" class="nav_product_link">フリップ印刷</a>
+                <a href="/sign/" class="nav_product_link">サイン看板</a>
+                <a href="/sns_panel/" class="nav_product_link">SNSパネル</a>
+                <a href="/pop/" class="nav_product_link">POP</a>
+                <a href="/menu/" class="nav_product_link">メニュー看板</a>
+                <a href="/salesign/" class="nav_product_link">セール看板</a>
+                <a href="/back-panel/" class="nav_product_link">記者会見用バックボード</a>
+                <a href="/welcomeboard/" class="nav_product_link">ウェルカムボード</a>
+                <a href="/caption-panel/" class="nav_product_link">キャプション</a>
+                <a href="/topboard/" class="nav_product_link">トップボード</a>
+                <a href="/specboard/" class="nav_product_link">スペックボード</a>
+                <a href="/products/alumiframepanel/" class="nav_product_link">アルミフレーム付きパネル</a>
+                <a href="/alpolic_panel/" class="nav_product_link">アルミ複合板（アルポリ）</a>
+                <a href="/flosta/" class="nav_product_link">フラスタ・フラワースタンドパネル</a>
+                <a href="/giantcard/" class="nav_product_link">巨大トランプ・巨大カルタ印刷</a>
+                <a href="/photobooth/" class="nav_product_link">フォトブース・フォトスポット</a>
+                <a href="/woodpanel/" class="nav_product_link">木製パネル印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>アクリル製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/products/acrylic_index.php" class="nav_product_link">アクリル印刷</a>
+                <a href="/products/acrylic_stand/" class="nav_product_link">アクスタ</a>
+                <a href="/products/acrylic_keyholder/" class="nav_product_link">アクキー</a>
+                <a href="/products/acrylic_diorama/" class="nav_product_link">アクリルジオラマ</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>アパレル製品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/tshirts/" class="nav_product_link">Tシャツ印刷</a>
+                <a href="/apron/" class="nav_product_link">エプロン印刷</a>
+                <a href="/totebag/" class="nav_product_link">トートバッグ印刷</a>
+                <a href="/sweatshirt/" class="nav_product_link">スウェット印刷</a>
+                <a href="/hoodie/" class="nav_product_link">パーカー印刷</a>
+                <a href="/polo-shirt/" class="nav_product_link">ポロシャツ印刷</a>
+                <a href="/photo-wear/" class="nav_product_link">フォトウェア印刷</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>その他商品</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/game-playmat/" class="nav_product_link">カードゲーム用プレイマット印刷</a>
+                <a href="/mousepad/" class="nav_product_link">マウスパッド印刷</a>
+                <a href="/a-stand/" class="nav_product_link">A型看板（非LED）</a>
+                <a href="/led-panel/" class="nav_product_link">LEDパネル</a>
+                <a href="/visitouch/" class="nav_product_link">ビジタッチ（NFCタグ）印刷</a>
+                <a href="/pvc-card/" class="nav_product_link">PVCカード・プラスチックカード</a>
+                <a href="/floorsign/" class="nav_product_link">フロアサイン</a>
+                <a href="/bigboard_stand/" class="nav_product_link">ビッグボードスタンド</a>
+            </div>
+        </div>
+        <div class="nav_group">
+            <div class="nav_group_header" onclick="toggleNavGroup(this)">
+                <span>業界別</span>
+                <span class="nav_group_toggle">▼</span>
+            </div>
+            <div class="nav_group_content">
+                <a href="/use/dojin/" class="nav_product_link">同人イベント印刷</a>
+                <a href="/real_estate_panel/" class="nav_product_link">不動産パネル印刷</a>
+                <a href="/use/restaurant/" class="nav_product_link">飲食店向けポスター印刷</a>
+                <a href="/use/wedding/" class="nav_product_link">ウェディング・ブライダル印刷</a>
+                <a href="/use/inbound/" class="nav_product_link">インバウンド向け印刷</a>
+                <a href="/use/game/" class="nav_product_link">パチンコ業界向け印刷</a>
+                <a href="/use/night/" class="nav_product_link">ナイト業界向け印刷</a>
+                <a href="/election-poster/" class="nav_product_link">選挙ポスター・為書き印刷</a>
+                <a href="/pet_print/" class="nav_product_link">ペット印刷</a>
+            </div>
+        </div>
+    </div>
+</li>
+<li><a href="https://visipri.com/">ＴＯＰ</a></li>
+<li><a href="https://visipri.com/intro01_whatsvisipri.php">ビジプリとは？</a></li>
+<li><a href="https://visipri.com/size/">料金表</a></li>
+<li><a href="https://visipri.com/intro02_nouki.php">納期･配送</a></li>
+<li><a href="https://visipri.com/intro03_soryo.php">送料</a></li>
+<li><a href="https://visipri.com/intro04_oshiharai.php">お支払方法</a></li>
+<li><a href="https://visipri.com/dataguide/">入稿方法(データ)</a></li>
+<li><a href="https://visipri.com/intro06_faq.php">ＦＡＱ</a></li>
+<li><a href="https://visipri.com/access.php">アクセス</a></li>
+<li><a href="https://visipri.com/contact/contact.php">お問合せ</a></li>
+</ul>
+</section>
+
+<script>
+// 商品一覧アコーディオン（第1階層）のトグル
+function toggleNavAccordion(element) {
+    var content = element.nextElementSibling;
+    var toggle = element.querySelector('.nav_accordion_toggle');
+    
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        toggle.classList.remove('open');
+    } else {
+        content.classList.add('show');
+        toggle.classList.add('open');
+    }
+}
+
+// 商品グループ（第2階層）のトグル
+function toggleNavGroup(element) {
+    var content = element.nextElementSibling;
+    var toggle = element.querySelector('.nav_group_toggle');
+    
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        toggle.classList.remove('open');
+    } else {
+        content.classList.add('show');
+        toggle.classList.add('open');
+    }
+}
+</script></div>
+<!-- END. NAVIGATION -->
+
+
+
+<main class="main">
+
+
+<div id="right_column">
+
+	<div id="pankuzu">
+		<div id="pankuzu_text" itemscope itemtype="http://schema.org/BreadcrumbList">
+		<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://visipri.com"><span itemprop="name">ビジプリ</span></a><meta itemprop="position" content="1" /></span>
+		>
+		<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://visipri.com/visitouch/"><span itemprop="name">ビジタッチ（NFCタグ）</span></a><meta itemprop="position" content="2"></span>
+		>
+		<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">ビジタッチ推奨アプリ【NFC Tools】の使い方</span><meta itemprop="position" content="3"></span>
+
+		</div>
+	</div><!-- END. #pankuzu -->
+
+<div id="hospital">
+
+
+	<section id="choice">
+	<h2 class="page_title">ビジタッチ推奨アプリ【NFC Tools】の使い方</h2>
+		<p class="lead">
+<style>
+	.lead_img{ height: 350px; background-size: cover; background-position: center center;}
+	 @media screen and (max-width: 768px){ .lead_img{ height: 200px;}}  
+
+/* 大きめ独自カラーのボタン */
+.btn--custom.btn--xl {
+  font-size: 1.3rem;
+  padding: 1.1rem 2.8rem;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #1E3A8A; /* ディープブルー */
+  color: #FFD700; /* ゴールド文字 */
+  border: 2px solid #FFD700;
+  box-shadow: 0 6px 14px rgba(30, 58, 138, 0.4);
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+/* ホバー時 */
+.btn--custom.btn--xl:hover {
+  background-color: #153074; 
+  color: #FFF8DC; 
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(30, 58, 138, 0.5);
+}
+
+/* クリック時 */
+.btn--custom.btn--xl:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.35);
+}
+
+/* 中央寄せ */
+.btn-wrap--large {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+</style>
+		<div style="text-align: center;"><img src="https://visipri.com/visitouch/img/appli1.webp" alt="NFC Toolsのスキャン画面"width="80%"></div>
+
+<section class="answer-box" aria-label="結論">
+  <h2>このテーマの結論（ビジプリの所見）</h2>
+  <ul>
+    <li>
+      <strong>NFC Toolsでできること</strong>
+      <span>
+        URL変更や電話設定、削除や上書きまで納品後でも手元で対応できます
+      </span>
+    </li>
+    <li>
+      <strong>基本の設定手順</strong>
+      <span>
+        アプリでレコード追加後に書き込みを行い、スマホをタグへ近づけます
+      </span>
+    </li>
+    <li>
+      <strong>運用時の注意点</strong>
+      <span>
+        容量や機種対応、金属面不可を確認し必要に応じてパスワード設定します
+      </span>
+    </li>
+  </ul>
+</section>
+
+
+		<FONT size="3"><BR>
+
+	ビジタッチ商品はスマホをかざすだけで、ホームページのURLを開いたり、電話を掛けたり、Wi-Fiに繋げたり、アプリを開いたりとワンタッチで出来るようになり、とても便利な機能です。<BR>
+	リンク先情報は予めお客様にお伺いしてビジタッチ商品が届いてすぐ任意のアクションが使えるようにしております。<BR>
+	しかし、納品後に<BR><BR>
+
+	<b>・リンク先のURLを変更したい<BR>
+	・飛び先をURLから電話を掛けるように変更したい<BR>
+	・第三者に上書きされないようにパスワードをかけたい</b><BR><BR>
+
+	など、ビジタッチ商品のアクション情報を変更したいケースが出てきます。<BR>
+	その際にNFC Toolsというアプリがあれば、納品後お客様でも簡単に変更や削除、URLの上書きが可能です。<BR>
+	こちらの記事ではNFC Toolsの使い方、設定方法を簡単にご説明いたします。<BR><BR>
+		</FONT>
+
+		<FONT size="2">
+	※外部サービスになりますので、本アプリに関して詳しい使用方法やお問合せなど頂きましても対応出来かねます。予めご了承下さいませ。
+		</FONT>
+
+		</FONT>
+		</p>
+	</section>
+
+	<section id="deadline">
+		<div class="info">
+		<p><span><DIV align="center"><font size="2"><B>目次</B></font></DIV></span><HR>
+		  <ul>
+		    <li><a href="#i01">1.まずはNFC Toolsをインストール</a></li>
+		    <li><a href="#i02">2.ＮＦＣ Ｔｏｏｌｓを使って書き込み手順</a></li>
+		    <li><a href="#i03">3.その他アクションの設定方法</a></li>
+		    <li><a href="#i04">4.パスワードの設定方法</a></li>
+		    <li><a href="#i05">5.ビジタッチの注意事項</a></li>
+		    <li><a href="#i06">6.ビジタッチ商品一覧</a></li>
+
+		  </ul>
+		</p>
+		</div>
+	</section>
+
+<section class="info-care-cta">
+  <h2 class="info-care-cta__title">
+    <span><b>NFCタグは法人・展示会・店舗でも活用できます</b></span>
+  </h2>
+
+  <p class="info-care-cta__lead">
+    NFCタグは、個人利用だけでなく、名刺交換・販促・来店導線づくりなどビジネスシーンでも手軽に導入できます。ここでは、実際に使いやすい代表的な活用例を簡潔にご紹介します。
+  </p>
+
+  <div class="info-care-cta__grid">
+
+    <div class="info-care-cta__item">
+      <div class="info-care-cta__head">
+        <div class="info-care-cta__icon">
+          <img src="img/nfc-business.webp" alt="法人利用例">
+        </div>
+        <h3><b>法人利用例</b></h3>
+      </div>
+      <p>
+        NFC搭載名刺を社員用に作成し、スマホをかざすだけで会社案内、プロフィール、問い合わせフォームへ誘導できます。営業資料の共有や名刺情報の更新にも便利です。
+      </p>
+    </div>
+
+    <div class="info-care-cta__item">
+      <div class="info-care-cta__head">
+        <div class="info-care-cta__icon">
+          <img src="img/nfc-exhibition.webp" alt="展示会利用例">
+        </div>
+        <h3><b>展示会利用例</b></h3>
+      </div>
+      <p>
+        ブースのPOPやパネルにNFCタグを組み込み、来場者を商品ページ、動画、資料請求フォームへ直接案内できます。QRコードと併用すれば接触機会を広げられます。
+      </p>
+    </div>
+
+    <div class="info-care-cta__item">
+      <div class="info-care-cta__head">
+        <div class="info-care-cta__icon">
+          <img src="img/nfc-store.webp" alt="店舗利用例">
+        </div>
+        <h3><b>店舗利用例</b></h3>
+      </div>
+      <p>
+        店頭POPやショップカードにNFCタグを付け、メニュー、予約ページ、SNS、キャンペーンページへ誘導できます。再来店やフォロー促進にも活用できます。
+      </p>
+    </div>
+
+  </div>
+
+  <p class="info-care-cta__note">
+    NFCタグをビジネスシーンで活用する場合は、まず<strong>価格・納期・導入手順</strong>を確認し、用途に合った仕様を選ぶのがおすすめです。
+  </p>
+
+  <div class="info-care-cta__buttons">
+
+    <a class="info-care-cta__btn info-care-cta__btn--price js-cta"
+       href="https://visipri.com/visitouch/#i02"
+       data-cta-id="visitouch_article_middle_price"
+       data-cta-text="価格・納期を確認する"
+       data-cta-area="middle">
+      <span class="info-care-cta__btn-icon">
+        <img src="img/icon-price.webp" alt="電卓のアイコン">
+      </span>
+      <span class="info-care-cta__btn-text">
+        価格・納期を確認する
+      </span>
+    </a>
+
+    <a class="info-care-cta__btn info-care-cta__btn--order js-cta"
+       href="https://visipri.com/visitouch/info-visitouch-application.html"
+       data-cta-id="visitouch_article_middle_flow"
+       data-cta-text="導入手順を見る"
+       data-cta-area="middle">
+      <span class="info-care-cta__btn-icon">
+        <img src="img/icon-flow.webp" alt="メモ帳のアイコン">
+      </span>
+      <span class="info-care-cta__btn-text">
+        導入手順を見る
+      </span>
+    </a>
+
+  </div>
+</section>
+
+
+  <!-- CTA -->
+  <div class="btn-wrap btn-wrap--large" style="margin-top:2rem;">
+<a class="btn btn--custom btn--xl js-cta"
+   href="https://visipri.com/contact/contact.php#form-contact"
+   data-cta-id="visitouch_article_middle_contact"
+   data-cta-text="法人利用を相談する"
+   data-cta-area="middle">
+    <span style="font-size: 25px;">✉</span>法人利用を相談する
+</a>
+  </div>
+<br><br>
+
+
+
+	<section id="choice">
+
+
+	<h2 class="sec_title" id="i01">■まずはNFC Toolsをインストール</h2>
+	<p class="lead">
+		<div style="text-align: center;"><img src="https://visipri.com/visitouch/img/appli3.webp" alt="NFC Toolsのアプリダウンロード画面"width="70%"></div>
+
+		<FONT size="3">
+
+<a href="https://apps.apple.com/jp/app/nfc-tools/id1252962749"><span style="font-size: 14px;"><strong>▶NFC Tools(iOS用)</strong></span></a><BR>
+
+<a href="https://play.google.com/store/apps/details?id=com.wakdev.wdnfc&amp;hl=ja&amp;gl=US"><span style="font-size: 14px;"><strong>▶NFC Tools(Android用)</strong></span></a><BR><BR>
+
+	お使いの機種に応じて上記リンクからNFC Toolsをインストールしましょう。
+
+</BR>
+		</FONT>
+	</p>
+	<p class="lead">
+
+
+	</section>
+	
+	<section id="choice">
+	<h2 class="sec_title" id="i02">■NFC Toodsを使って書き込み手順</h2>
+	<p class="lead">
+
+		<FONT size="3">
+	ビジタッチ商品は基本的にお客様からアクション内容とリンク先情報を頂き、納品後すぐに使える状態にしておりますが、<BR>
+	お客様の方でアクションを書き込む場合の手順は以下になります。<BR><BR>
+
+	
+	<b>１．「書く」をタップ</b><BR>
+	<b>２．「レコード追加」をタップ</b><BR><BR>
+		<div style="text-align: center;"><img src="https://visipri.com/visitouch/img/appli4.webp" alt="NFC Toolsのレコード追加画面遷移"width="80%"></div><BR><BR>
+
+
+	<b>３．アクションの種類を選択</b><BR>
+		NFC Toolsでは<mark><b>21種類ものアクション</b></mark>が用意されています。<BR>
+		お客様の用途に合わせて設定することが可能です。<BR><BR>
+	
+		<img src="https://visipri.com/visitouch/img/appli2.webp" alt="NFC Toolsのアクションと各アイコンの画像"width="100%"><BR>
+
+	<BR><BR><BR>
+
+	<b>４．「ＵＲＬレコード」をタップ</b><BR>
+	今回は一例としてＵＲＬレコードを追加していきます。<BR><BR>
+
+	<b>５．ご希望のＵＲＬを入力後、右上の「ＯＫ」をタップ</b><BR><BR>
+	
+	<b>６．「書き込み/○○バイト」をタップ</b><BR><BR><BR>
+	
+	
+	<img src="https://visipri.com/visitouch/img/appli5.webp" alt="NFC Toolsのレコード追加から書き込みまでの画面遷移"width="100%"><BR><BR><BR>
+
+	<b>７．「スキャンの準備が出来ました」と表示されます。<BR><BR>
+	
+	８.　スマホをNFCタグに近づけます。<BR><BR>
+
+	９．「NFCタグにアクセス」と表示されたら書き込み完了です。</b><BR><BR>
+	
+
+	<div style="text-align: center;"><img src="https://visipri.com/visitouch/img/appli6.webp" alt="NFC Toolsの画面遷移"width="90%"></div><BR><BR>
+
+	<B>■あとはスマホをかざすだけ</b><BR>
+	書き込み完了後はNFCタグにスマホをかざせば設定したＵＲＬにワンタッチでリンクすることが出来ます。<BR><BR><BR>
+		</FONT>
+	</p>
+
+
+	
+	<p class="lead">
+		<FONT size="4"><B><H3>▶ＵＲＬレコードの上書き（変更）方法</H3></B></FONT>
+		<FONT size="3"><BR>
+
+	<B>１．URL部分を左へスクロール<BR>
+	２．鉛筆マークをタップし、任意のURLを書き込みます。<BR>
+	３．上記[６]に戻りあとは同じ手順になります。</b><BR>
+
+	<div style="text-align: center;"><img src="https://visipri.com/visitouch/img/appli7.webp" alt="NFC ToolsのURLレコードの上書き画面遷移"width="100%"></div><BR><BR>
+
+
+		</FONT>
+	</p>
+
+	</section>
+
+
+	<section id="choice">
+	<h2 class="sec_title" id="i03">■その他アクションの設定方法</h2>
+
+	<p class="lead">
+
+		<FONT size="3">
+	前述したように選べるアクションは21種類あります。<BR>
+	その中でも便利なアクション機能の設定方法をご紹介します。<BR>
+	基本的には<BR><BR>
+
+	１．使いたいアクションを選択<BR>
+	２．レコードを追加<BR>
+	３．書き込み<BR><BR>
+	
+	の流れで設定が可能です。
+	
+<BR><BR><BR>
+
+		</FONT>
+	</p>
+	<p class="lead">
+		<FONT size="4"><B><H3>▶電話をかける</H3></B></FONT>
+		<FONT size="3">
+		設定した電話番号を送信し、ワンクリックで発信できるようにする方法です。<BR>
+		電話番号入力の手間や、誤入力をさけることでより多くの利用者の方が電話をかけてきてくれます。<BR>
+		不動産パネルで最新の空き状況を電話で確認する必要がある場合や、カスタマーサービスに連絡する場合などに便利です。<BR><BR>
+
+		<b>１．電話番号をタップ<BR>
+		２．「レコードを追加」に電話番号を入力して「ＯＫ」をタップ<BR>
+		３．「書き込み/○○バイト」をタップ</b><BR>
+
+
+<BR><BR><BR>
+		</FONT>
+	</p>
+
+	<p class="lead">
+		<FONT size="4"><B><H3>▶Wi-Fiに接続</H3></B></FONT>
+		<FONT size="3">
+		Wi-Fiスポットなどの設定情報をスマホに送信できます。<BR>
+		飲食店や小売店、公共施設など多くの施設でWi-Fi設定を確認する利用者の方がいらっしゃいますが、これらの対応をよりスムーズに行なう事ができ、従業員のかたの業務効率化にもつながります。<BR>
+		卓上POPや壁に設置するパネルで使用するのが効率的です。<BR><BR>
+		
+		<b>１．Wi-Fiネットワークをタップ<BR>
+		２．「レコードを追加」に認証方式／暗号化方式／SSID／パスワードを入力して「ＯＫ」をタップ<BR>
+		３．「書き込み/○○バイト」をタップ<BR></b>
+
+
+<BR><BR><BR>
+		</FONT>
+	</p>
+
+	</section>
+
+
+
+	<section id="choice">
+	<h2 class="sec_title" id="i04">■パスワードの設定方法</h2>
+	<p class="lead">
+
+		<FONT size="3">
+		イベントや飲食店などで第三者にビジタッチを利用してもらう場合、意図せず<b>情報の漏洩やアクション情報の上書き</b>などを防ぐためにパスワード設定を推奨しております。
+
+
+	<BR><BR><BR>
+		</FONT>
+	</p>
+	<p class="lead">
+		<FONT size="4"><B><H3>▶パスワードを設定</H3></B></FONT>
+		<FONT size="3">
+		１．「その他」をタップ<BR>
+		２．「パスワードを設定」をタップ<BR>
+		３．　任意のパスワードを入力<BR>
+		４．「スキャンの準備が出来ました」と表示されます。<BR>
+		５.　スマホをNFCタグに近づけます。<BR>
+		６．「NFCタグにアクセス」と表示されたらパスワード設定完了です。
+<BR><BR><BR>
+		</FONT>
+	</p>
+
+	<p class="lead">
+		<FONT size="4"><B><H3>▶パスワードを消去</H3></B></FONT>
+		<FONT size="3">
+		１．「その他」をタップ<BR>
+		２．「パスワードを消去」をタップ<BR>
+		３．　設定したパスワードを入力<BR>
+		４．「スキャンの準備が出来ました」と表示されます。<BR>
+		５.　スマホをNFCタグに近づけます。<BR>
+		６．「NFCタグにアクセス」と表示されたらパスワード消去完了です。
+<BR><BR><BR>
+		</FONT>
+	</p>
+
+	</section>
+
+	<section id="choice">
+	<h2 class="sec_title" id="i05">■ビジタッチの注意事項</h2>
+	<p class="lead">
+	
+
+		<FONT size="3">
+	<mark><b>以下を必ずご確認の上、ご注文をお願い致します。</b></mark><BR><BR>
+
+	・NFCタグは出力が弱いため、交通系ICなどと比べると読み込みに時間がかかります。およそ１秒から３秒かざし続ける必要がありますのであらかじめご了承ください。<BR>
+	・NFC非対応の機種では使用することはできません。NFCに対応しているのはiOS13以上を搭載したiPhone7以降の機種とAndroidになります。<BR>
+	・機種によっては、画面ロックを外した状態でないと読み込めない場合があります。<BR>
+	・機種によってはNFC機能をONにする必要があります。方法は、お手持ちの機種の取扱説明書をご確認ください。<BR>
+	・機種により、NFCの感度が異なります。スマホカバーやケースなどをご使用の場合は反応が悪くなる、または反応しない場合があります。<BR>
+	・充電中はNFC機能が使えない場合があります。<BR>
+	・URLを書き込む場合、容量が不足する場合があります。その場合は、URL短縮サービスなどをご利用ください。<BR>
+	・本製品の最大容量は144bytesまでです。画像や動画などの保存はほぼできません。<BR>
+	・アルミなどの金属面には対応していません。<BR>
+	・不用意に折り曲げたり強い力をかけると破損の恐れがあります。<BR>
+	・リンク先を「書き込む」もしくは「上書きする」には、NFC用アプリケーションが必要です。お客様でインストール下さい。<BR>
+	・リンク先を『上書き可能』な状態で出荷致します。納品後にお客様で設定変更していただく事も可能です。<BR>
+	・リンク先の削除・上書き・パスワード設定など納品後は対応出来かねますので、お客様でお願い致します。<BR>
+	・第三者に意図せず読み込み、書き込みをされる場合があります。ご注意ください。<BR>
+	・本製品が、正常に読み書きができないことによって発生したデータ損失や 漏洩などについては、ビジプリサービスでは一切の責任を負いかねます。
+
+
+
+</FONT>
+</p>
+
+</section>
+
+
+  <!-- CTA -->
+  <div class="btn-wrap btn-wrap--large" style="margin-top:2rem;">
+<a class="btn btn--custom btn--xl js-cta"
+   href="https://visipri.com/visitouch/namecard.php#i01"
+   data-cta-id="visitouch_article_middle_product"
+   data-cta-text="デジタル名刺を作る"
+   data-cta-area="middle">
+    <span style="font-size: 25px;">🖨</span>デジタル名刺を作る
+</a>
+  </div>
+<br><BR>
+
+	<style>
+		.item_class_a{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
+		</style>
+<section id="choice">
+	<h2 class="sec_title" id="i06">■ ビジタッチ商品一覧</h2>
+		<div class="grid" id="i01">
+		<div class="item tenji">
+			<span>New</span>
+				<div class="details">
+					  <B>【ビジタッチ】展示パネル</B><BR>
+				展示パネルの端などにビジタッチを仕込み、サイトやフォームに誘導
+			</div>
+				<A href="https://visipri.com/visitouch/tenjipanel.php" class="item_class_a"></a>
+		</div>
+	
+		  <div class="item pop">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】卓上POP</B><BR>
+				店内のWi-Fiスポット情報をビジタッチに仕込み、店内に配置
+			</div>
+				<A href="https://visipri.com/visitouch/takujoupop.php" class="item_class_a"></a>
+		  </div>
+	
+		<div class="item toshindai">
+			<span>New</span>
+				<div class="details">
+					  <B>【ビジタッチ】等身大パネル</B><BR>
+				等身大パネルの被写体が持っている商品などにビジタッチを仕込むことで効果UP
+			</div>
+				<A href="https://visipri.com/visitouch/toshindai.php" class="item_class_a"></a>
+		</div>
+	
+		  <div class="item captionpanel">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】キャプションパネル</B><BR>
+				展示品の下に設置するキャプションにビジタッチを仕込み、詳細情報へ誘導
+			</div>
+				<A href="https://visipri.com/visitouch/captionpanel.php" class="item_class_a"></a>
+		  </div>
+	
+		
+		  <div class="item photo">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】写真パネル</B><BR>
+				パネルにした写真以外の関連した写真をアルバムにしてビジタッチでアクセス
+			</div>
+				<A href="https://visipri.com/visitouch/photopanel.php" class="item_class_a"></a>
+		  </div>
+	
+	
+		  <div class="item spec">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】スペックボード</B><BR>
+				車両や機械の横に設置するスペックボードにビジタッチを仕込み、サイトへ誘導
+			</div>
+				<A href="https://visipri.com/visitouch/specboard.php" class="item_class_a"></a>
+		  </div>
+	
+	
+		  <div class="item meishi">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】名刺</B><BR>
+				名刺情報+名刺には記載しきれない詳細情報を記載したサイトへ誘導
+			</div>
+				<A href="https://visipri.com/visitouch/namecard.php" class="item_class_a"></a>
+		  </div>
+	
+		  <div class="item hagaki">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】はがき（ＤＭ）</B><BR>
+				開封前にすでにスマホでアクセスできる高反響DMの作成
+			</div>
+				<A href="https://visipri.com/visitouch/dm.php" class="item_class_a"></a>
+		  </div>
+	
+		  <div class="item fudousan">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】不動産パネル</B><BR>
+				空室パネルの端にビジタッチを仕込み、電話問い合わせに誘導
+			</div>
+				<A href="https://visipri.com/visitouch/fudousanpanel.php" class="item_class_a"></a>
+		  </div>
+	
+		  <div class="item gakkai">
+			<span>New</span>
+			<div class="details">
+					  <B>【ビジタッチ】学会ポスター</B><BR>
+				学会ポスターの上にシールでカバーしたビジタッチを貼り論文詳細へ誘導
+			</div>
+				<A href="https://visipri.com/visitouch/gakkaiposter.php" class="item_class_a"></a>
+		  </div>	
+		</div>
+	</section>
+		<BR>
+
+<BR>
+
+<div class="contact">
+	<div class="contact_inner">
+
+	<div class="tel_mail">
+	<h3 id="i11">ビジタッチのご注文・お見積もり(無料)<br class="p-none">ご相談は24時間いつでもOK</h3>
+	<div class="tel_mail_inner">
+<div class="tel"><h4>お電話でのお問合せ</h4>
+<p>0800-91-91-910</p>
+<div class="direct">
+	<h5>エリア<br>直  通</h5>
+<dl><dt>（東京）</dt><dd>03-3974-8220</dd>
+	<dt>（大阪）</dt><dd>06-6533-7188</dd>
+</dl>
+</div>
+</div>
+<div class="mail"><h4>メールでのお問合せ</h4><p>visipri@visia.co.jp</p></div>
+	</div>
+		</div>
+	<div class="form"><h4>フォームでのご注文はこちら</h4>
+	<p><a href="https://visipri.com/order/order_form.php?id=30">注文する</a></p></div>
+</div>
+</div>
+
+
+
+<p class="pagetop"><a href="#container">↑ページの上部へ戻る</a></p>
+
+</div><!--page-content-->
+
+<!-- right_column --></div>
+
+<div id="left_column">
+	<div class="sidebar-wrapper">
+				<div class="sidebar-tel-box">
+	<h5>お電話でのお見積・お問合せ</h5>
+	<a href="tel:0800-91-91-910">0800-91-91-910</a>
+	
+	<div class="region-tel-box">
+		<div>エリア<br />直  通</div>
+		<div>
+			<div>（東京）&nbsp;<a href="tel:03-3974-8220"><span>03</span>-3974-8220</a></div>
+			<div>（大阪）&nbsp;<a href="tel:06-6533-7188"><span>06</span>-6533-7188</a></div>
+		</div>
+	</div>
+</div>
+
+<a class="order-btn" href="https://visipri.com/order/order_form.php?id=30">
+	<div class="inner">
+		<div>
+			注文する
+		<h6>ご注文フォームはこちら</h6>
+		</div>
+	</div>
+	
+</a>
+		﻿
+<!--↓↓↓ fix_20230212_uetani　------------------------------------------------------------------------------>
+
+<div class="product-sidebar-box_fix_u">
+
+<style>
+	.plan_gekiyasu{ background: #E4007F; color: #fff;}
+	.plan_tsujyo{ background: #1d8fff; color: #fff;}
+	.plan_tokkyu{background: #292929; color: #fff;}
+	.product-sidebar-box_fix_u .product-section ul li{ box-sizing:border-box; border-bottom:1px dotted #afafaf; }
+	.product-sidebar-box_fix_u .product-section ul li a{ display: flex; flex-wrap: wrap; padding:6px 10px; position:relative; font-weight:bold; font-size:16px; }
+	.product-sidebar-box_fix_u .product-section-title{ display:flex; justify-content:space-between; background:#000; color:#fff; font-size:15px; font-weight:bold; padding:15px 10px; line-height:1; }
+	.product-sidebar-box_fix_u .product-section-title div:last-child{ font-size:16px; opacity:.4; }
+	.product-sidebar-box_fix_u .product-section.size ul li a{ background-color:#FFFFFF;}
+	.product-sidebar-box_fix_u .product-section.use ul li a{ background-color:#fffadc;}
+	.product-sidebar-box_fix_u .product-section.design ul li a{ background-color:#ffe3e3;}
+	 /*.product-sidebar-box_fix_u .product-section.plan ul li a{background-color:#e0ffff;}*/
+	.product-sidebar-box_fix_u .product-section.information ul li a{ background-color:#f0fff0;}
+	.product-sidebar-box_fix_u .product-section ul li a:after{ content:''; position:absolute; width:0; height:0; border-style:solid; border-width:4px 0 4px 5px; border-color:transparent transparent transparent #000000; top:50%; right:18px; -webkit-transform:translate(0%,-50%); transform:translate(0%,-50%); -webkit-transition:.3s all cubic-bezier(.17,.67,.83,.67); transition:.3s all cubic-bezier(.17,.67,.83,.67); }
+	.product-sidebar-box_fix_u .product-section ul li a:hover:after{ right:13px; -webkit-transition:.3s all cubic-bezier(.17,.67,.83,.67); transition:.3s all cubic-bezier(.17,.67,.83,.67); }
+	.product-sidebar-box_fix_u .sb_tit{ font-size: 15px; width: 90%; line-height: 1.4;}
+	.product-sidebar-box_fix_u .sb_txt{ font-size: 13px; width: 90%; font-weight: normal; line-height: 1.4;}
+	.product-sidebar-box_fix_u .size .sb_tit{ display: flex; flex-wrap: wrap; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; width: 55px; background: #ddd;}
+	.product-sidebar-box_fix_u .size .sb_txt{ display: flex; flex-wrap: wrap; align-items: center; font-weight: normal; font-size: 13px; line-height: 1.3; padding: 7px 10px; width: auto; flex: 1;}
+	.sb_plan_01{ width: 60px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-right: 10px;}
+	.sb_plan_02{ flex: 1;}
+</style>
+
+	<div class="product-section design">
+		<div class="product-section-title">
+			<div>重要</div>
+			<div>Important</div>
+		</div>
+		
+		<ul>
+			<li><a href="https://visipri.com/visitouch/info-visitouch-application.html" title="ビジタッチ推奨アプリ【NFC Tools】の使い方">
+				<div class="sb_tit">【NFC Tools】の使い方</div><div class="sb_txt">ビジタッチ推奨アプリ</div>
+			</a></li>
+		</ul>
+	</div><!--product-section-->
+
+	<div class="product-section size">
+		<div class="product-section-title">
+			<div>TOPページ</div>
+			<div>Top</div>
+		</div>
+		<ul>
+			<li><a href="https://visipri.com/visitouch/" title="ビジタッチTOPページ">
+			<div class="sb_txt">■ビジタッチTOP</div></a></li>
+
+		</ul>
+	</div><!--product-section-->
+
+	<style>
+			/**お役立ち情報用**/
+			.product-sidebar-box_fix_u .product-section.plan ul.oyakudachi_info li a { background-color: #fff; display: flex; align-items: center; padding: 10px 10px;}
+			.product-sidebar-box_fix_u .product-section.plan ul.oyakudachi_info li:nth-of-type(even) a { background: #f6f6f6}
+			.sb_tit_oyaku_icon img {width: 20px; height: 30px; margin: 0 10px 0 0;}
+			.product-sidebar-box_fix_u .product-section ul.oyakudachi_info li a:after{ display: none;}
+			.sb_tit_base{ flex: 1;}
+			.product-sidebar-box_fix_u ul.oyakudachi_info .sb_tit { font-size: 14px; width: 100%; line-height: 1.4;}
+		</style>
+
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>商品から選ぶ</div>
+			<div>Item</div>
+		</div>
+		
+		<ul>
+			<li><a href="https://visipri.com/visitouch/tenjipanel.php" title="ビジタッチ展示パネル">
+				<div class="sb_tit">ビジタッチ展示パネル</div><div class="sb_txt">印刷+ラミ+パネル+アルミフレーム</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/takujoupop.php" title="ビジタッチ卓上POP">
+				<div class="sb_tit">ビジタッチ卓上POP</div><div class="sb_txt">印刷+ラミ+パネル+紙製スタンド</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/toshindai.php" title="ビジタッチ等身大パネル">
+				<div class="sb_tit">ビジタッチ等身大パネル</div><div class="sb_txt">印刷+ラミ+パネル+フリーカット＋紙製スタンド</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/captionpanel.php" title="ビジタッチキャプションパネル">
+				<div class="sb_tit">ビジタッチキャプションパネル</div><div class="sb_txt">印刷+ラミ+パネル</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/photopanel.php" title="ビジタッチ写真パネル">
+				<div class="sb_tit">ビジタッチ写真パネル</div><div class="sb_txt">印刷+ラミ+パネル</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/specboard.php" title="ビジタッチスペックボード">
+				<div class="sb_tit">ビジタッチスペックボード</div><div class="sb_txt">印刷+ラミ+パネル</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/namecard.php" title="ビジタッチ名刺">
+				<div class="sb_tit">ビジタッチ名刺</div><div class="sb_txt">印刷のみ</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/dm.php" title="ビジタッチＤＭはがき">
+				<div class="sb_tit">ビジタッチＤＭはがき</div><div class="sb_txt">印刷のみ</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/fudousanpanel.php" title="ビジタッチ不動産パネル">
+				<div class="sb_tit">ビジタッチ不動産パネル</div><div class="sb_txt">印刷+ラミ+パネル</div>
+			</a></li>
+			<li><a href="https://visipri.com/visitouch/gakkaiposter.php" title="ビジタッチ学会ポスター">
+				<div class="sb_tit">ビジタッチ学会ポスター</div><div class="sb_txt">印刷のみ</div>
+			</a></li>
+		</ul>
+	</div><!--product-section-->
+
+
+<div class="product-section plan">
+	<div class="product-section-title">
+		<div>納期から選ぶ</div>
+		<div>Plan</div>
+	</div>
+
+	<ul>
+		<li><a href="https://visipri.com/visitouch/plan_gek.php" title="ビジタッチ激安便：24時までの入稿で3日後発送">
+			<div class="sb_plan_01 plan_gekiyasu">激安便</div>
+			<div class="sb_plan_02"><div class="sb_tit">ビジタッチ</div><div class="sb_txt">3日後発送で最安値</div></div>
+		</a></li>
+		<li><a href="https://visipri.com/visitouch/plan_nor.php" title="ビジタッチ通常便：16時までの入稿で当日発送">
+			<div class="sb_plan_01 plan_tsujyo">通常便</div>
+			<div class="sb_plan_02"><div class="sb_tit">ビジタッチ</div><div class="sb_txt">16時まで入稿で当日発送</div></div>
+		</a></li>
+		<li><a href="https://visipri.com/visitouch/plan_exp.php" title="ビジタッチ特急便：最短3時間でお届け">
+			<div class="sb_plan_01 plan_tokkyu">特急便</div>
+			<div class="sb_plan_02"><div class="sb_tit">ビジタッチ</div><div class="sb_txt">入稿から３時間でお届け</div></div>
+		</a></li>
+	</ul>
+</div> 
+
+
+	<div class="product-section plan">
+		<div class="product-section-title">
+			<div>お役立ち情報</div>
+			<div>Information</div>
+		</div>
+		
+		<ul class="oyakudachi_info">
+		
+		<li><a href="https://visipri.com/visitouch/info-conversion.html" title="【コラム】印刷物の効果検証｜リアルでのコンバージョンUPとは">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「【コラム】印刷物の効果検証｜リアルでのコンバージョンUPとは」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">【コラム】リアルでのコンバージョンUPとは</div></div>
+			</a></li>
+
+		</ul>
+	</div><!--product-section-->
+	
+	<div class="product-section plan">
+		<div class="product-section-title">
+			<div>コンテンツ</div>
+			<div>Contents</div>
+		</div>
+
+		<ul class="oyakudachi_info">
+
+		<li><a href="https://visipri.com/visitouch/info-toha.php" title="NFCタグとは？今さら聞けない仕組みと使い方をやさしく解説！">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグとは？今さら聞けない仕組みと使い方をやさしく解説！」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">NFCタグとは？今さら聞けない仕組みと使い方をやさしく解説！</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-history.php" title="SuicaやApple Payのルーツはここにあった！NFCの歴史を探る">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「SuicaやApple Payのルーツはここにあった！NFCの歴史を探る」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">SuicaやApple Payのルーツはここにあった！NFCの歴史を探る</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-future.php" title="2025年以降のNFCタグを活用した印刷はどう進化する？ 最新技術とトレンド予測">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「2025年以降のNFCタグを活用した印刷はどう進化する？ 最新技術とトレンド予測」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">2025年以降のNFCタグを活用した印刷はどう進化する？ </div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-digital.php" title="NFCタグを使ったデジタル名刺が便利すぎる！ もう紙の名刺はいらない？">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグを使ったデジタル名刺が便利すぎる！ もう紙の名刺はいらない？」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">NFCタグを使ったデジタル名刺が便利すぎる！</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-use.php" title="NFCタグを様々な印刷に応用！ 効率アップの意外な使い方5選">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグを様々な印刷に応用！ 効率アップの意外な使い方5選」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">NFCタグを様々な印刷に応用！意外な使い方</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-guide.php" title="NFCタグの選び方完全ガイド！ 用途別おすすめタイプまとめ">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグの選び方完全ガイド！ 用途別おすすめタイプまとめ」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">用途別NFCタグの選び方完全ガイド！</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-point.php" title="NFCタグを使った印刷！最大限に活用する5つのポイント！">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグを使った印刷！最大限に活用する5つのポイント！」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">NFCタグを使った印刷！最大限に活用する5つのポイント！</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-chigai.php" title="FeliCaとNFCの違いって何？ 日本独自の技術との関係を解説！">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「FeliCaとNFCの違いって何？ 日本独自の技術との関係を解説！」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">FeliCaとNFCの違いって何？</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-scene.php" title="NFCタグ vs QRコード！どっちが便利？シーン別の使い分け">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグ vs QRコード！どっちが便利？シーン別の使い分け」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">NFCタグ vs QRコード！どっちが便利?</div></div>
+			</a></li>
+
+		<li><a href="https://visipri.com/visitouch/info-solution.php" title="NFCタグが反応しない？ すぐに試せる5つの対処法！">
+				 <div class="sb_tit_oyaku_icon"><img src="https://visipri.com/img/oyakudachi.svg" alt="「NFCタグが反応しない？ すぐに試せる5つの対処法！」リンク指マーク"></div>
+				<div class="sb_tit_base"><div class="sb_tit">NFCタグが反応しない？ すぐに試せる5つの対処法！</div></div>
+			</a></li>
+
+
+
+		</ul>
+	</div><!--product-section-->
+<!--
+	<div class="product-section plan">
+		<div class="product-section-title">
+			<div>納期から選ぶ</div>
+			<div>Plan</div>
+		</div>
+		
+		<ul>
+			<li><a href="" title="ビジタッチ"><a href="" title="ビジタッチ激安便：24時までの校了で3日後発送">
+				<div class="sb_plan_01 plan_gekiyasu">激安便</div>
+				<div class="sb_plan_02"><div class="sb_tit">ビジタッチ</div><div class="sb_txt">3日後発送で最安値</div></div>
+			</a></a></li>
+			<li><a href="" title="ビジタッチ"><a href="" title="ビジタッチ通常便：16時までの校了で当日発送">
+				<div class="sb_plan_01 plan_tsujyo">通常便</div>
+				<div class="sb_plan_02"><div class="sb_tit">ビジタッチ</div><div class="sb_txt">16時まで校了で当日発送</div></div>
+			</a></a></li>
+			<li><a href="" title="ビジタッチ"><a href="" title="ビジタッチ特急便：最短3時間でお届け">
+				<div class="sb_plan_01 plan_tokkyu">特急便</div>
+				<div class="sb_plan_02"><div class="sb_tit">ビジタッチ</div><div class="sb_txt">入稿から３時間でお届け</div></div>
+			</a></a></li>
+		</ul>
+	</div>product-section
+
+	<div class="product-section design">
+		<div class="product-section-title">
+			<div>デザインオプション</div>
+			<div>Design</div>
+		</div>
+		
+		<ul>
+			<li><a href="" title="ビジタッチ"><a href="https://visipri.com/toshindai/design_full.php" title="等身大パネルのデザイン">
+				<div class="sb_tit">等身大パネルのデザイン</div><div class="sb_txt">デザインオプションTOP</div>
+			</a></a></li>
+		</ul>
+	</div>product-section-->
+
+
+
+	
+</div><BR><BR>
+		
+
+<!--↓↓↓ fix_20230212_uetani　------------------------------------------------------------------------------>
+
+<div class="product-sidebar-box_fix_u">
+
+<style>
+	.plan_gekiyasu{ background: #E4007F; color: #fff;}
+	.plan_tsujyo{ background: #1d8fff; color: #fff;}
+	.plan_tokkyu{background: #292929; color: #fff;}
+	.plan_daiko{background: #DDDDDD; color: #000;}
+	.product-sidebar-box_fix_u .product-section ul li{ box-sizing:border-box; border-bottom:1px dotted #afafaf; }
+	.product-sidebar-box_fix_u .product-section ul li a{ display: flex; flex-wrap: wrap; padding:6px 10px; position:relative; font-weight:bold; font-size:16px; }
+	.product-sidebar-box_fix_u .product-section-title{ display:flex; justify-content:space-between; background:#000; color:#fff; font-size:15px; font-weight:bold; padding:15px 10px; line-height:1; }
+	.product-sidebar-box_fix_u .product-section-title div:last-child{ font-size:16px; opacity:.4; }
+	.product-sidebar-box_fix_u .product-section.size ul li a{ background-color:#FFFFFF;}
+	.product-sidebar-box_fix_u .product-section.use ul li a{ background-color:#fffadc;}
+	.product-sidebar-box_fix_u .product-section.design ul li a{ background-color:#ffe3e3;}
+	.product-sidebar-box_fix_u .product-section.plan ul li a{ background-color:#e0ffff;}
+	.product-sidebar-box_fix_u .product-section.information ul li a{ background-color:#f0fff0;}
+	.product-sidebar-box_fix_u .product-section ul li a:after{ content:''; position:absolute; width:0; height:0; border-style:solid; border-width:4px 0 4px 5px; border-color:transparent transparent transparent #000000; top:50%; right:18px; -webkit-transform:translate(0%,-50%); transform:translate(0%,-50%); -webkit-transition:.3s all cubic-bezier(.17,.67,.83,.67); transition:.3s all cubic-bezier(.17,.67,.83,.67); }
+	.product-sidebar-box_fix_u .product-section ul li a:hover:after{ right:13px; -webkit-transition:.3s all cubic-bezier(.17,.67,.83,.67); transition:.3s all cubic-bezier(.17,.67,.83,.67); }
+	.product-sidebar-box_fix_u .sb_tit{ font-size: 15px; width: 90%; line-height: 1.4;}
+	.product-sidebar-box_fix_u .sb_txt{ font-size: 13px; width: 90%; font-weight: normal; line-height: 1.4;}
+	.product-sidebar-box_fix_u .size .sb_tit{ display: flex; flex-wrap: wrap; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; width: 55px; background: #ddd;}
+	.product-sidebar-box_fix_u .size .sb_txt{ display: flex; flex-wrap: wrap; align-items: center; font-weight: normal; font-size: 13px; line-height: 1.3; padding: 7px 10px; width: auto; flex: 1;}
+	.sb_plan_01{ width: 60px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-right: 10px;}
+	.sb_plan_02{ flex: 1;}
+	/* 追加 */
+	.product-sidebar-box_fix_u .product-section.dictionary ul li a {background-color:#c8fdff;font-size:13px;}
+	.sidebar-wrapper .product-section {margin-bottom: 30px;}
+	@media (min-width:900px){
+	.product-section.use ul li a{font-size: 13px !important;}
+	.product-section.information ul li a{font-size: 13px !important;}
+	.product-sidebar-box_fix_u .sb_tit {font-size: 13px !important;}
+	.product-sidebar-box_fix_u .sb_txt {font-size: 12px !important;}
+	}
+
+
+
+
+/* =========================================================
+   AIプリントサービス
+   横型コンパクトCTA
+========================================================= */
+
+.ai-print-sidebar-mini{
+  margin:15px 0 20px;
+}
+
+.ai-print-sidebar-mini__link{
+  position:relative;
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr) 18px;
+  align-items:center;
+  gap:11px;
+  min-height:96px;
+  padding:  3px 13px;
+  overflow:hidden;
+  border:2.5px solid #313030 !important;
+  border-radius:11px;
+  background:
+    linear-gradient(
+      110deg,
+      #fff 0%,
+      #f9f9ff 100%
+    );
+  color:#374151 !important;
+  box-shadow:0 4px 13px rgba(49,46,129,.07);
+  text-decoration:none;
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease;
+}
+
+.ai-print-sidebar-mini__link:link,
+.ai-print-sidebar-mini__link:visited{
+  color:#374151 !important;
+  text-decoration:none;
+}
+
+.ai-print-sidebar-mini__link:hover{
+  border-color:#c7c8f3;
+  box-shadow:0 8px 19px rgba(49,46,129,.11);
+  transform:translateY(-2px);
+}
+
+
+/* 画像 */
+
+.ai-print-sidebar-mini__image{
+  width:80px;
+  height:80px;
+}
+
+.ai-print-sidebar-mini__image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s ease;
+}
+
+.ai-print-sidebar-mini__link:hover
+.ai-print-sidebar-mini__image img{
+  transform:scale(1.04);
+}
+
+
+/* テキスト */
+
+.ai-print-sidebar-mini__content{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  font-family: sans-serif;
+}
+
+.ai-print-sidebar-mini__label{
+  margin-bottom:5px;
+  color:#5070ff;
+  font-size:12.5px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.12em;
+}
+
+.ai-print-sidebar-mini__title{
+  color:#1f2937;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.45;
+}
+
+
+.ai-print-sidebar-mini__text{
+  display:inline-flex;
+  align-items:center;
+  align-self:flex-start;
+  width:max-content;
+  margin-top:6px;
+  padding:4px 8px;
+  border-radius:5px;
+  background:#fff0f0;
+  color:#e54848;
+  font-size:11px;
+  font-weight: bold;
+  line-height:1.2;
+  letter-spacing:.02em;
+  background: #000000;
+  color: #ffffff;
+}
+
+.ai-print-sidebar-mini__text b{ color:#fffa30;}
+
+
+/* 矢印 */
+
+.ai-print-sidebar-mini__arrow{
+  position:relative;
+  z-index:1;
+  color:#ff6161;
+  font-size:17px;
+  font-weight:700;
+  transition:transform .25s ease;
+}
+
+.ai-print-sidebar-mini__link:hover
+.ai-print-sidebar-mini__arrow{
+  transform:translateX(3px);
+}
+
+
+
+@media screen and (min-width:768px) and (max-width:1200px){
+
+  .ai-print-sidebar-mini__link{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    padding:12px 10px;
+    text-align:center;
+  }
+
+  /* 画像 */
+  .ai-print-sidebar-mini__image{
+    width: 80px;
+    height: 80px;
+    flex:0 0 auto;
+  }
+
+  /* テキスト */
+  .ai-print-sidebar-mini__content{
+    width:100%;
+    align-items:center;
+  }
+
+  .ai-print-sidebar-mini__label{
+    margin:5px 0px;
+    font-size:13px;
+  }
+
+  .ai-print-sidebar-mini__title{
+    font-size:13px;
+    line-height:1.45;
+  }
+
+
+  .ai-print-sidebar-mini__text{
+    align-self:center;
+    margin-top:7px;
+    padding:5px 9px;
+    font-size:11px;
+  }
+
+
+  /* 矢印は右下へ */
+  .ai-print-sidebar-mini__arrow{
+    position:absolute;
+    right:10px;
+    bottom: 78px;
+    font-size: 25px;
+  }
+
+}
+
+/* =========================================================
+   AIプリントサービス
+   スマートフォン用
+========================================================= */
+
+@media screen and (max-width:767px){
+
+.ai-print-sidebar-mini__title br{
+
+	display:none;}
+
+.ai-print-sidebar-mini__label{font-size:13px;}
+
+.ai-print-sidebar-mini__title{font-size:16px;}
+
+
+.ai-print-sidebar-mini__text{
+  font-size:15px;
+}
+
+}
+
+
+/* =========================================================
+   AIプリントサービス
+   スマートフォン用
+========================================================= */
+
+@media screen and (max-width:418px){
+
+.ai-print-sidebar-mini__link{ padding: 10px 13px;}
+
+}
+
+</style>
+
+
+
+<!-- AIプリントサービス 横型サイドバーCTA -->
+
+		<div class="product-section-title">
+			<div>AIで制作する</div>
+			<div>AI print</div>
+		</div>
+
+
+
+<div class="ai-print-sidebar-mini">
+
+  <a
+    href="/ai-print/"
+    class="ai-print-sidebar-mini__link"
+    title="AI画像生成から印刷注文までできるAIプリントサービス"
+  >
+
+    <div class="ai-print-sidebar-mini__image">
+      <img
+        src="/img/icon/ai-print2.webp"
+        alt=""
+        width="80"
+        height="80"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="ai-print-sidebar-mini__content">
+
+      <span class="ai-print-sidebar-mini__label">
+        新サービス
+      </span>
+
+      <span class="ai-print-sidebar-mini__title">
+        AIで画像を作って<br>
+        そのまま印刷注文
+      </span>
+
+      <span class="ai-print-sidebar-mini__text">
+        β版 期間限定<b>無料</b>公開中
+      </span>
+
+    </div>
+
+    <span
+      class="ai-print-sidebar-mini__arrow"
+      aria-hidden="true"
+    >
+      ▶
+    </span>
+
+  </a>
+
+</div>
+
+
+
+
+	<div class="product-section size">
+		<div class="product-section-title">
+			<div>サイズから選ぶ</div>
+			<div>Size</div>
+		</div>
+
+		<ul>
+			<li><a href="/size/b0/" title="B0サイズの印刷・パネル加工">
+				<div class="sb_tit">B0</div><div class="sb_txt">B0印刷<BR>1030mm×1456mm</div>
+			</a></li>
+			<li><a href="/size/b1/" title="B1サイズの印刷・パネル加工">
+				<div class="sb_tit">B1</div><div class="sb_txt">B1印刷<BR>728mm×1030mm</div>
+			</a></li>
+			<li><a href="/size/b2/" title="B2サイズの印刷・パネル加工">
+				<div class="sb_tit">B2</div><div class="sb_txt">B2印刷<BR>515mm×728mm</div>
+			</a></li>
+			<li><a href="/size/b3/" title="B3サイズの印刷・パネル加工">
+				<div class="sb_tit">B3</div><div class="sb_txt">B3印刷<BR>364mm×515mm</div>
+			</a></li>
+			<li><a href="/size/b4/" title="B4サイズの印刷・パネル加工">
+				<div class="sb_tit">B4</div><div class="sb_txt">B4印刷<BR>257mm×364mm</div>
+			</a></li>
+			<li><a href="/size/b5/" title="B5サイズの印刷・パネル加工">
+				<div class="sb_tit">B5</div><div class="sb_txt">B5印刷<BR>182mm×257mm</div>
+			</a></li>
+			<li><a href="/size/a0/" title="A0サイズの印刷・パネル加工">
+				<div class="sb_tit">A0</div><div class="sb_txt">A0印刷<BR>841mm×1189mm</div>
+			</a></li>
+			<li><a href="/size/a1/" title="A1サイズの印刷・パネル加工">
+				<div class="sb_tit">A1</div><div class="sb_txt">A1印刷<BR>594mm×841mm</div>
+			</a></li>
+			<li><a href="/size/a2/" title="A2サイズの印刷・パネル加工">
+				<div class="sb_tit">A2</div><div class="sb_txt">A2印刷<BR>420mm×594mm</div>
+			</a></li>
+			<li><a href="/size/a3/" title="A3サイズの印刷・パネル加工">
+				<div class="sb_tit">A3</div><div class="sb_txt">A3印刷<BR>297mm×420mm</div>
+			</a></li>
+			<li><a href="/size/a4/" title="A4サイズの印刷・パネル加工">
+				<div class="sb_tit">A4</div><div class="sb_txt">A4印刷<BR>210mm×297mm</div>
+			</a></li>
+			<li><a href="/size/a5/" title="A5サイズの印刷・パネル加工">
+				<div class="sb_tit">A5</div><div class="sb_txt">A5印刷<BR>148mm×210mm</div>
+			</a></li>
+			<li><a href="/size/450k/" title="450×450サイズの印刷・パネル加工">
+				<div class="sb_tit">正方形</div><div class="sb_txt">正方形<BR>450mm×450mm</div>
+			</a></li>
+			<li><a href="/size/600k/" title="600×600サイズの印刷・パネル加工">
+				<div class="sb_tit">正方形</div><div class="sb_txt">正方形<BR>600mm×600mm</div>
+			</a></li>
+			<li><a href="/size/900k/" title="900×900サイズの印刷・パネル加工">
+				<div class="sb_tit">正方形</div><div class="sb_txt">正方形<BR>900mm×900mm</div>
+			</a></li>
+			<li><a href="/size/900_1800/" title="900×1800サイズの印刷・パネル加工">
+				<div class="sb_tit">長方形</div><div class="sb_txt">3×6<BR>900mm×1800mm</div>
+			</a></li>
+			<li><a href="/size/sq1/" title="その他の正方形サイズの印刷・パネル加工">
+				<div class="sb_tit">ﾘﾝｸ</div><div class="sb_txt">その他の<BR>正方形サイズ</div>
+
+			</a></li>
+			<li><a href="/size/sq2/" title="その他の長方形サイズの印刷・パネル加工">
+				<div class="sb_tit">ﾘﾝｸ</div><div class="sb_txt">その他の<BR>長方形サイズ</div>
+			</a></li>
+			<li><a href="/size/" title="サイズ一覧">
+				<div class="sb_tit">ﾘﾝｸ</div><div class="sb_txt">サイズ一覧</div>
+			</a></li>
+
+
+		</ul>
+
+	</div><!--product-section-->
+
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>紙製品</div>
+			<div>Paper</div>
+		</div>
+		<ul>
+
+<li><a href="/products/poster/" title="ポスター印刷">ポスター</a></li>
+<li><a href="/gakkai/" title="学会ポスター印刷">学会ポスター</a></li>
+<li><a href="/tanzaku-poster/" title="短冊ポスター">短冊ポスター</a></li>
+<li><a href="/kamislogan/" title="紙スローガンの印刷">紙スローガン</a></li><li><a href="/size/namecard/" title="名刺・ショップカードの印刷">名刺</a></li>
+<li><a href="/size/postcard/" title="はがき・ポストカード・DMの印刷">はがき</a></li>
+<li><a href="/size/fryer/" title="チラシ・フライヤーの印刷">チラシ・フライヤー</a></li>
+<li><a href="/oban-print/" title="大判プリント">大判印刷</a></li>
+<li><a href="/tracingpaper/" title="トレーシングペーパー印刷・制作">トレーシングペーパー印刷</a></li>
+<li><a href="/size/lami/" title="ラミネート加工">ラミネート加工</a></li>
+<li><a href="/products/poster/syohin_pouch.php" title="パウチ加工">パウチ加工</a></li>
+<li><a href="/shoujyou/" title="表彰状・賞状印刷">表彰状・賞状印刷</a></li>
+<li><a href="/posterframe/" title="フレーム付きポスター印刷"><font color="red"><b>New</b></font>フレーム付きポスター印刷</a></li>
+		</ul>
+
+	</div><!--product-section-->
+
+
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>布製品</div>
+			<div>Cloth</div>
+		</div>
+		<ul>
+<li><a href="/material/tarpaulin/" title="ターポリン印刷">ターポリン印刷</a></li>
+<li><a href="/material/tromat/" title="トロマットの印刷">トロマット印刷</a></li>
+<li><a href="/oudanmaku/" title="屋外・屋内で使用できる横断幕の制作">横断幕印刷</a></li>
+<li><a href="/kensuimaku/" title="屋外・屋内で使用できる懸垂幕の制作">懸垂幕印刷</a></li>
+<li><a href="/ouenmaku/" title="屋外・屋内で使用できる応援幕の制作">応援幕印刷</a></li>
+<li><a href="/products/tapestry/" title="オリジナルタペストリーの印刷">タペストリー印刷</a></li>
+<li><a href="/products/bannerstand/" title="バナースタンド印刷・本体販売TOP">バナースタンド印刷</a></li>
+<li><a href="/products/rollupbanner/" title="ロールアップタイプのスタンドバナー印刷">ロールアップバナー印刷</a></li>
+<li><a href="/nobori/" title="屋外・屋内で使用できるのぼりの印刷・制作"><font color="red"><b>New</b></font>のぼり印刷</a></li>
+
+		</ul>
+
+	</div><!--product-section-->
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>フィルム・シール</div>
+			<div>Film Seal</div>
+		</div>
+		<ul>
+<li><a href="/backlight-film/" title="バックライトフィルム印刷">バックライトフィルム印刷</a></li>
+<li><a href="/seal/" title="大判シールの印刷">大型シール印刷</a></li>
+<li><a href="/sticker/" title="ステッカーの印刷">ステッカー印刷</a></li>
+<li><a href="/wallpaper/" title="壁紙印刷">壁紙・壁面装飾</a></li>
+<li><a href="/products/magnet/" title="マグネット印刷・制作">マグネット印刷</a></li>
+
+		</ul>
+
+	</div><!--product-section-->
+
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>パネル製品</div>
+			<div>Panel</div>
+		</div>
+		<ul>
+<li><a href="/products/panel/" title="ポスターパネルの制作">パネル印刷・パネル加工</a></li>
+<li><a href="/freecut/" title="フリーカット（曲線カット）・くり抜き加工">フリーカットパネル印刷</a></li>
+<li><a href="/toshindai/" title="等身大パネルの制作･印刷">等身大パネル</a></li>
+<li><a href="/tenjipanel/" title="展示パネルの印刷">展示パネル</a></li>
+<li><a href="/photo_panel/" title="インテリアに最適なおしゃれ写真パネル">写真パネル</a></li>
+<li><a href="/use/logokanban/" title="ロゴ看板の印刷・作成">ロゴ看板</a></li>
+<li><a href="/grandprix-panel/" title="スポーツ大会や出し物で使用する賞品目録パネルの制作">賞品パネル・目録パネル</a></li>
+<li><a href="/plaque_panel/" title="簡易版で使用できる表彰楯印刷">表彰楯</a></li>
+<li><a href="/tsurikanban/" title="ステージや会議室で使用する吊り看板の印刷・制作">吊り看板の印刷</a></li>
+<li><a href="/flip/" title="A3サイズ＆30cm×30cmのフリップ制作･印刷">フリップ印刷</a></li>
+<li><a href="/sign/" title="イベント用案内誘導サイン看板の制作">サイン看板</a></li>
+<li><a href="/sns_panel/" title="SNSパネルの印刷・作成">SNSパネル</a></li>
+<li><a href="/pop/" title="店舗・飲食店向けＰＯＰの制作">POP</a></li>
+<li><a href="/menu/" title="店舗・飲食店のメニュー看板制作">メニュー看板</a></li>
+<li><a href="/salesign/" title="店舗･アパレル向けセール看板">セール看板</a></li>
+<li><a href="/back-panel/" title="記者会見のうしろのロゴパネル・バックパネル">記者会見用バックボード</a></li>
+<li><a href="/welcomeboard/" title="ウェルカムボード">ウェルカムボード</a></li>
+<li><a href="/caption-panel/" title="展示や店舗で便利なキャプションパネル">キャプション</a></li>
+<li><a href="/topboard/" title="店舗の販促には欠かせないトップボード印刷">トップボード</a></li>
+<li><a href="/specboard/" title="クルマ系イベントでは必須のスペックボード制作">スペックボード</a></li>
+<li><a href="/products/alumiframepanel/" title="アルミフレーム付きパネル">アルミフレーム付きパネル</a></li>
+<li><a href="/alpolic_panel/" title="アルポリの制作">アルミ複合板（アルポリ）</a></li>
+<li><a href="/flosta/" title="フラスタ・フラワースタンドパネルの印刷">フラスタ・フラワースタンドパネル</a></li>
+<li><a href="/giantcard/" title="巨大トランプ・巨大カルタ印刷">巨大トランプ・巨大カルタ印刷</a></li>
+<li><a href="/photobooth/" title="フォトスポット・フォトブースの制作、設置">フォトブース・フォトスポット</a></li>
+<li><a href="/woodpanel/" title="木製パネル印刷"><font color="red"><b>New</b></font>木製パネル印刷</a></li>
+
+		</ul>
+
+	</div><!--product-section-->
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>アクリル製品</div>
+			<div>Acrylic</div>
+		</div>
+		<ul>
+
+<li><a href="/products/acrylic_index.php" title="アクリル印刷TOP">アクリル印刷</a></li>
+<li><a href="/products/acrylic_stand/" title="アクリルスタンド印刷TOP">アクスタ</a></li>
+<li><a href="/products/acrylic_stand/syohin-osuwari.php" title="お座りアクスタ商品ページ"><font color="red"><b>New</b></font>お座りアクスタ</a></li>
+<li><a href="/products/acrylic_keyholder/" title="アクリルキーホルダー印刷TOP">アクキー</a></li>
+<li><a href="/products/acrylic_diorama/" title="アクリルジオラマ印刷TOP">アクリルジオラマ</a></li>
+
+		</ul>
+
+	</div><!--product-section-->
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>アパレル製品</div>
+			<div>Apparel</div>
+		</div>
+		<ul>
+
+<li><a href="/tshirts/" title="Tシャツ印刷">Tシャツ印刷</a></li>
+<li><a href="/apron/" title="エプロン印刷"><font color="red"><b>New</b></font>エプロン印刷</a></li>
+<li><a href="/totebag/" title="トートバッグ印刷"><font color="red"><b>New</b></font>トートバッグ印刷</a></li>
+<li><a href="/sweatshirt/" title="スウェット印刷"><font color="red"><b>New</b></font>スウェット印刷</a></li>
+<li><a href="/hoodie/" title="パーカー印刷"><font color="red"><b>New</b></font>パーカー印刷</a></li>
+<li><a href="/polo-shirt/" title="ポロシャツ印刷"><font color="red"><b>New</b></font>ポロシャツ印刷</a></li>
+<li><a href="/photo-wear/" title="フォトウェア印刷"><font color="red"><b>New</b></font>フォトウェア印刷</a></li>
+
+		</ul>
+
+	</div><!--product-section-->
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>その他商品</div>
+			<div>Others</div>
+		</div>
+		<ul>
+<li><a href="/game-playmat/" title="カードゲーム用プレイマット">カードゲーム用プレイマット印刷</a></li>
+<li><a href="/mousepad/" title="マウスパッド">マウスパッド印刷</a></li>
+<li><a href="/a-stand/" title="A型看板（非LEDパネル）"><font color="red"><b>New</b></font>A型看板（非LED）</a></li>
+<li><a href="/led-panel/" title="LEDパネル本体セット">LEDパネル</a></li>
+<li><a href="/visitouch/" title="非接触タグ（NFCタグ）のビジタッチ印刷">ビジタッチ（NFCタグ）印刷</a></li>
+<li><a href="/pvc-card/" title="PVCカード・プラスチックカード印刷">PVCカード・プラスチックカード</a></li>
+<li><a href="/floorsign/" title="フロアサイン印刷"><font color="red"><b>New</b></font>フロアサイン印刷</a></li>
+<li><a href="/bigboard_stand/" title="ビッグボードスタンド"><font color="red"><b>New</b></font>ビッグボードスタンド</a></li>
+		</ul>
+
+	</div><!--product-section-->
+
+
+	<div class="product-section use">
+		<div class="product-section-title">
+			<div>業界別</div>
+			<div>Scene</div>
+		</div>
+		<ul>
+<li><a href="/use/dojin/" title="同人イベント向けポスター・アクリル印刷">同人イベント印刷</a></li>
+<li><a href="/real_estate_panel/" title="不動産パネル印刷">不動産パネル印刷</a></li>
+<li><a href="/use/restaurant/" title="飲食店向けポスター印刷・パネル印刷・バナー印刷">飲食店向けポスター印刷</a></li>
+<li><a href="/use/wedding/" title="ウェディング・ブライダル印刷">ウェディング・ブライダル印刷</a></li>
+<li><a href="/use/inbound/" title="インバウンド向け印刷">インバウンド向け印刷</a></li>
+<li><a href="/use/game/" title="パチンコ業界向け印刷">パチンコ業界向け印刷</a></li>
+<li><a href="/use/night/" title="選挙ポスター・為書きのデザイン印刷">ナイト業界向け印刷</a></li>
+<li><a href="/election-poster/" title="選挙ポスター・為書きのデザイン印刷">選挙ポスター・為書き印刷</a></li>
+<li><a href="/pet_print/" title="愛犬・愛猫などのペットグッズ制作">ペット印刷</a></li>
+		</ul>
+
+	</div><!--product-section-->
+
+
+
+	<div class="product-section design">
+		<div class="product-section-title">
+			<div>エリア別納期</div>
+			<div>Area</div>
+		</div>
+
+		<ul>
+			<li><a href="/area_detail/makuhari_messe.php" title="幕張メッセへのパネル・ポスターの納品"><div class="sb_tit">幕張メッセ</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+			<li><a href="/area_detail/tokyo_bigsight.php" title="東京ビックサイトへのパネル・ポスターの納品"><div class="sb_tit">東京ビックサイト</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+			<li><a href="/area_detail/ikebukuro_sanshine.php" title="池袋サンシャインシティへのパネル・ポスターの納品"><div class="sb_tit">池袋サンシャインシティ</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+			<li><a href="/area_detail/tokyo_kokusai_forum.php" title="東京国際フォーラムへのパネル・ポスターの納品"><div class="sb_tit">東京国際フォーラム</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+			<li><a href="/area_detail/pacifico_yokohama.php" title="パシフィコ横浜へのパネル・ポスターの納品"><div class="sb_tit">パシフィコ横浜</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+			<li><a href="/area_detail/intex_osaka.php" title="インテックス大阪へのパネル・ポスターの納品"><div class="sb_tit">インテックス大阪</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+			<li><a href="/area_detail/" title="その他のエリアへのパネル・ポスターの納品"><div class="sb_tit">その他のエリア</div><div class="sb_txt">パネル・ポスターの納品</div></a></li>
+		</ul>
+	</div><!--product-section-->
+
+
+
+
+
+
+	<div class="product-section dictionary">
+		<div class="product-section-title">
+			<div>用語辞典</div>
+			<div>Dictionary</div>
+		</div>
+
+		<ul>
+			<li><a href="/print-glossary/" title="印刷用語集">印刷用語辞典</a></li>
+			<li><a href="/event-dictionary/" title="イベント用語集">イベント用語辞典</a></li>
+			<li><a href="/marketing-dictionary/" title="販促・マーケ用語集">販促・マーケ用語辞典</a></li>
+			<li><a href="/ad-dictionary/" title="広告用語集">広告用語辞典</a></li>
+			<li><a href="/art-dictionary/" title="美術用語辞典">美術用語辞典</a></li>
+			<li><a href="/theater-dictionary/" title="舞台・演劇用語辞典">舞台・演劇用語辞典</a></li>
+			<li><a href="/real_estate-dictionary/" title="不動産業界用語辞典">不動産業界用語辞典</a></li>
+			<li><a href="/foodservice-dictionary/" title="飲食用語辞典">飲食用語辞典</a></li>
+			<li><a href="/apparel-dictionary/" title="アパレル業界用語辞典">アパレル業界用語辞典</a></li>
+		</ul>
+	</div><!--product-section-->
+
+	<div class="product-section information">
+		<div class="product-section-title">
+			<div>その他</div>
+			<div>Other</div>
+		</div>
+
+		<ul>
+			<li><a href="/case/" title="制作事例">制作事例</a></li>
+			<li><a href="/event-setup/" title="イベントの装飾から施工・設置・撤去まで">展示会ブース施工</a></li>
+			<li><a href="/canva-print/" title="CANVA印刷">CANVA印刷</a></li>
+			<li><a href="/material/" title="各種用紙・素材">各種用紙・資材のご説明</a></li>
+			<li><a href="/template/" title="入稿データテンプレート一覧">無料テンプレート一覧</a></li>
+			<li><a href="/contents/" title="コンテンツ一覧">コンテンツ一覧</a></li>
+			<li><a href="/posting/" title="セグメントポスティング">セグメントポスティング</a></li>
+			<li><a href="/partners/" title="提携先一覧">提携先一覧</a></li>
+			<li><a href="/saigai-support/noto2024.php" title="支援事業">支援事業</a></li>
+			<li><a href="/contents/links.php" title="リンク集">リンク集<span>大判印刷･パネル製作関連</span></a></li>
+			<li><a href="/recruit2018.php" title="経験不問・年齢不問のビジプリ採用情報">ビジプリ採用情報<span>経験、年齢不問です</span></a></li>
+
+		</ul>
+
+	</div><!--product-section-->
+
+
+
+
+</div>	</div>
+</div><!-- left_column -->
+
+</main><!--page-wrapper-->
+<!-- container_inner --></div>
+<!-- /container --></div>
+
+
+
+<style>
+	#visi-service li a{font-size:11px!important;}
+	#footer .site-info {
+		padding-right: 70px;
+	}
+</style>
+<section id="visi-service">
+	<h3 class="visi-service-title">ビジプリの関連サービス</h3>
+	<ul>
+		<li><a href="https://visipri.com/products/poster/">ポスター印刷</a></li>
+		<li><a href="https://visipri.com/products/panel/">パネル印刷</a></li>
+		<li><a href="https://visipri.com/gakkai/">学会ポスター印刷</a></li>
+		<li><a href="https://visipri.com/toshindai/">等身大パネル印刷</a></li>
+		<li><a href="https://visipri.com/photo_panel/">写真パネル印刷</a></li>
+		<li><a href="https://visipri.com/tenjipanel/">展示パネル印刷</a></li>
+		<li><a href="https://visipri.com/products/acrylic_stand/">アクスタ印刷</a></li>
+		<li><a href="https://visipri.com/products/acrylic_keyholder/">アクキー印刷</a></li>
+		<!-- <li><a href="https://visipri.com/products/magnet/">マグネット印刷</a></li> -->
+		<li><a href="https://visipri.com/tsurikanban/">吊り看板印刷</a></li>
+		<li><a href="https://visipri.com/use/logokanban/">ロゴ看板印刷</a></li>
+		<li><a href="https://visipri.com/products/alumiframepanel/">アルミフレームつきパネル印刷</a></li>
+		<li><a href="https://visipri.com/material/tarpaulin/">ターポリン印刷</a></li>
+		<li><a href="https://visipri.com/use/hospital/">病院ポスター印刷</a></li>
+		<li><a href="https://visipri.com/use/restaurant/">飲食店ポスター印刷</a></li>
+		<li><a href="https://visipri.com/use/game/">パチンコポスター印刷</a></li>
+		<li><a href="https://visipri.com/use/night/">ナイト系ポスター印刷</a></li>
+		<!-- <li><a href="https://visipri.com/sns_panel/">SNSパネル印刷</a></li> -->
+		<li><a href="https://visipri.com/washi_poster/">和紙ポスター印刷</a></li>
+		<!-- <li><a href="https://visipri.com/products/rollupbanner/">ロールアップバナー印刷</a></li> -->
+		<!-- <li><a href="https://visipri.com/products/tapestry/">タペストリー印刷</a></li> -->
+		<li><a href="https://visipri.com/size/namecard/">名刺印刷</a></li>
+		<li><a href="https://visipri.com/size/postcard/">はがき印刷</a></li>
+		<li><a href="https://visipri.com/backlight-film/">バックライトフィルム印刷</a></li>
+		<li><a href="https://visipri.com/recycle/acrylic-board.php">アクリル製品の無料引取</a></li>
+	</ul>
+</section>
+
+<div id="footer">
+
+<!-- footer SNS▼ -->
+<!-- footer SNS▼ -->
+<style>
+	#footer{ position: relative;}
+	#footer .inner{ position: relative;}
+	.sns_link_btn{align-items: center; display: flex; position: absolute; top: 20px; right: 20px;}
+	.sns_link_btn img { width: 32px; height: 32px; margin-right: 0px;}
+	.js-sns-link{ text-decoration: none!important; display: inline-block;  font-size: 13px; border-radius: 3px; color: #656565!important; background: transparent;  /*border: 1px solid #ccc;  box-shadow: 0 1px 0 rgb(0 0 0 / 8%);*/ text-shadow: none; line-height: 23px; padding: 3px 5px 2px 5px; margin-right: 0px; }
+	.js-sns-link a {display: flex; flex-wrap: wrap; align-items: center; align-content: center; color: #666;}
+	.js-sns-link a span{ display: none;}
+		@media screen and (max-width: 768px){
+			.sns_link_btn{position: relative; top: unset; right: unset; margin: 0 0 15px 0;}
+		}
+</style>
+		
+<div class="sns_link_btn">
+
+  <!-- INSTAGRAM -->
+  <div class="js-sns-link">
+    <a href="https://www.instagram.com/visipri_official/" target="_blank" rel="nofollow noopener noreferrer">
+      <img src="https://visipri.com/img/sns_icon_01.png" class="footer_sns_icon">
+      <span>INSTAGRAM</span>
+    </a>
+  </div>
+  
+  <!-- X (Twitter) -->
+  <div class="js-sns-link">
+    <a href="#" onclick="shareTwitter()" target="_blank" rel="nofollow noopener noreferrer">
+      <img src="https://visipri.com/img/sns_icon_02.png" class="footer_sns_icon">
+      <span>X</span>
+    </a>
+  </div>
+  
+  <!-- Facebook -->
+  <div class="js-sns-link">
+    <a href="#" onclick="shareFacebook()" target="_blank" rel="nofollow noopener noreferrer">
+      <img src="https://visipri.com/img/sns_icon_03.png" class="footer_sns_icon">
+      <span>Facebook</span>
+    </a>
+  </div>
+
+  <!-- LINE -->
+  <div class="js-sns-link">
+    <a href="#" onclick="shareLine()" target="_blank" rel="nofollow noopener noreferrer">
+      <img src="https://visipri.com/img/sns_icon_04.png" class="footer_sns_icon">
+      <span>LINE</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  const pageUrl = encodeURIComponent(location.href);
+  const pageTitle = encodeURIComponent(document.title);
+
+  function shareFacebook() {
+    window.open(`https://www.facebook.com/share.php?u=${pageUrl}`);
+  }
+
+  function shareTwitter() {
+    window.open(`https://twitter.com/share?url=${pageUrl}&text=${pageTitle}`);
+  }
+
+  function shareLine() {
+    window.open(`https://line.me/R/msg/text/?${pageTitle}%0A${pageUrl}`);
+  }
+</script>
+<!-- footer SNS▲ -->	<!-- footer SNS▲ -->
+
+(運営会社)株式会社ビジア<br>
+<br class="mo_only" />
+<!-- 20260709 運営会社情報の改善 -->
+【東京】〒174-0051 東京都板橋区小豆沢2-8-10　<br class="mo_only" />(東京直通)03-3974-8220<br class="mo_only" /><a href="https://maps.app.goo.gl/kviEENK3BVtMswAq8" target="_blank">【Googleマップ】</a><br />
+<br class="mo_only" />
+【大阪】〒556-0005 大阪府大阪市浪速区日本橋4-7-7　<br class="mo_only" />デンキョー日本橋ビル２Ｆ　<br class="mo_only" />(大阪直通)06-6533-7188<br class="mo_only" /><a href="https://maps.app.goo.gl/E2Ewhk7GxBTSU1xD8" target="_blank">【Googleマップ】</a><br />
+<br class="mo_only" />
+【東大阪】〒577-0836 大阪府東大阪市渋川町4-2-11　<br class="mo_only" />(東大阪直通)06-6736-5300<br class="mo_only" /><a href="https://maps.app.goo.gl/79en1eNtvYkswbhy8" target="_blank">【Googleマップ】</a><br />
+<br class="mo_only" />
+【甲府】〒400-0074 山梨県甲府市千塚3-4-19　<br class="mo_only" />GA甲府第4-3　<br class="mo_only" />(甲府直通)0552-15-6240<br class="mo_only" /><a href="https://maps.app.goo.gl/8DjXfEpyCVDX6piz6" target="_blank">【Googleマップ】</a><br />
+<br class="mo_only" />
+【仙台】〒981-3117 宮城県仙台市泉区市名坂字万吉前23-1　<br class="mo_only" />(仙台直通)022-343-5899<br class="mo_only" /><a href="https://maps.app.goo.gl/U2ZSi6UomKKNAQdA7" target="_blank">【Googleマップ】</a><br />
+<!-- //20260709 運営会社情報の改善 -->
+<br class="mo_only" />
+Tel:0800-9191910<br class="mo_only" />(全国共通フリーコール)/Fax:03-5304-8315<br />
+Mail:visipri@visia.co.jp
+
+<!-- 20260803 インボイス記載 -->
+<div class="scn-footer-invoice">
+		<p>「インボイス制度」適格請求書発行事業者登録番号<br>
+			T2011001066184
+		</p>
+	</div>
+<!-- //20260803 インボイス記載 -->
+
+<div class="site-info">
+	<div>
+		<ul>
+			|
+			<li><a href="https://visipri.com/privacy.html">プライバシーポリシー</a></li> |
+			<li><a href="https://visipri.com/company.html">運営会社</a></li> |
+ 			<li><a href="https://visipri.com/tokutei.html">特定商取引法に基づく表記</a></li>|
+			<li><a href="https://visipri.com/guideline.html">ガイドライン</a></li>
+		</ul>
+	</div>
+	<p>Copyright(C) VISIA All Rights Reserved.</p>
+</div>
+
+<!-- ▼20260701 Corporation -->
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "Corporation",
+"name": "株式会社ビジア",
+"URL": "https://visipri.com/",
+"telephone": "+81-800-919-1910",
+"faxNumber": "+81-3-5304-8315",
+"department": [
+{
+"@type": "LocalBusiness",
+"name": "株式会社ビジア 東京オフィス",
+"telephone": "+81-3-3974-8220",
+"address": {
+"@type": "PostalAddress",
+"postalCode": "174-0051",
+"addressRegion": "東京都",
+"addressLocality": "板橋区",
+"streetAddress": "小豆沢2-8-10"
+}
+},
+{
+"@type": "LocalBusiness",
+"name": "株式会社ビジア 大阪オフィス",
+"telephone": "+81-6-6533-7188",
+"address": {
+"@type": "PostalAddress",
+"postalCode": "556-0005",
+"addressRegion": "大阪府",
+"addressLocality": "大阪市浪速区",
+"streetAddress": "日本橋4-7-7 デンキョー日本橋ビル２Ｆ"
+}
+},
+{
+"@type": "LocalBusiness",
+"name": "株式会社ビジア 東大阪オフィス",
+"telephone": "+81-6-6736-5300",
+"address": {
+"@type": "PostalAddress",
+"postalCode": "577-0836",
+"addressRegion": "大阪府",
+"addressLocality": "東大阪市",
+"streetAddress": "渋川町4-2-11"
+}
+},
+{
+"@type": "LocalBusiness",
+"name": "株式会社ビジア 甲府オフィス",
+"telephone": "+81-55-215-6240",
+"address": {
+"@type": "PostalAddress",
+"postalCode": "400-0074",
+"addressRegion": "山梨県",
+"addressLocality": "甲府市",
+"streetAddress": "千塚3-4-19 GA甲府第4-3"
+}
+},
+{
+"@type": "LocalBusiness",
+"name": "株式会社ビジア 仙台オフィス",
+"telephone": "+81-22-343-5899",
+"address": {
+"@type": "PostalAddress",
+"postalCode": "981-3117",
+"addressRegion": "宮城県",
+"addressLocality": "仙台市泉区",
+"streetAddress": "市名坂字万吉前23-1"
+}
+}
+]
+}
+</script>
+<!-- ▲20260701 Corporation -->
+
+<a style="display:block; width:70px; height:70px; position:fixed; bottom: 10px; right: 80px; z-index:999;" href="#container" id="goto_top"><img style="width:100%;" src="/share/images/gototop.png" alt="ページ上部に戻る"></a>
+
+<!-- /footer --></div>
+
+<!-- /wrap --></div>
+
+<!-- THEME SCRIPTS -->
+<script src="../assets/common/js/main.js"></script>
+
+<script>
+    $(function () {
+        var set_cart_badge = function ($target, cart_count) {
+            if ($target.length === 0) {
+                return;
+            }
+
+            var $badge = $target.children(".cart-badge");
+
+            if (cart_count <= 0) {
+                $badge.remove();
+                return;
+            }
+
+            if ($badge.length === 0) {
+                $badge = $('<span class="cart-badge"></span>');
+                $target.append($badge);
+            }
+
+            $badge.text(cart_count);
+        };
+
+        $.ajax({
+            url: "/order/get_cart_count.php",
+            cache: false,
+            dataType: "json"
+        }).done(function (response) {
+            var cart_count = parseInt(response && response.count, 10);
+            if (isNaN(cart_count)) {
+                cart_count = 0;
+            }
+
+            set_cart_badge($(".header_btn_cart"), cart_count);
+            set_cart_badge($(".float_cart_btn a"), cart_count);
+        });
+    });
+</script>
+
+<script defer type="text/javascript" src="/size/step4.js?11"></script>
+
+<!--fix_20221210_uetani-->
+<style>
+main #right_column { margin-top: 80px;}
+div#hospital { width: 100%;padding: 0 15px; box-sizing: border-box;}
+@media screen and (min-width: 768px){
+ #wrap { width:100%; max-width: 1220px;margin: 10px auto;}
+ #container {width:100%; max-width: 1220px;}
+ main #left_column {width: 30%;max-width: 300px; box-sizing: border-box; margin: 0;}
+ main #right_column {width: 70%;flex: 1;box-sizing: border-box;margin: 0;}
+ #pankuzu {padding: 0 15px;box-sizing: border-box; }
+ div#hospital {width: 100%;max-width: 920px;padding: 0 15px; box-sizing: border-box; }
+ div#hospital section#price dl.table dd, div#hospital section#deadline dl.table dd { max-width: 195px; }
+ div#hospital section#deadline .box_wrap .box h4 {max-width: 190px;}
+}
+</style>
+	
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a38622e1b873b204',t:'MTc4ODk1NjMxMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

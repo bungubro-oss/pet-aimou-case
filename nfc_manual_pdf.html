@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ねこビン（デジタルフォト版）取扱説明書</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'BIZ UDGothic', "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            color: #333; background-color: #eee; line-height: 1.5;
+        }
+        @page { size: A4 portrait; margin: 12mm; }
+        @media print {
+            body { background-color: #fff; }
+            .page { box-shadow: none !important; margin: 0 !important; page-break-after: always; }
+            .no-print { display: none !important; }
+        }
+        .page {
+            width: 210mm; min-height: 297mm; background: white;
+            margin: 10mm auto; padding: 15mm;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative;
+        }
+        .header-title { text-align: center; font-size: 26pt; font-weight: bold; color: #5c4033; border-bottom: 3px solid #5c4033; padding-bottom: 5px; margin-bottom: 20px; }
+        .header-subtitle { text-align: center; font-size: 14pt; color: #666; margin-top: -10px; margin-bottom: 20px; }
+        
+        .step-title {
+            background-color: #fce4ec; color: #d81b60; font-size: 20pt; font-weight: bold;
+            padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px;
+            page-break-after: avoid;
+        }
+        .step-title .step-num { background-color: #d81b60; color: #fff; padding: 5px 15px; border-radius: 5px; font-size: 22pt; }
+        
+        .visual-block {
+            page-break-inside: avoid;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .visual-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .visual-desc {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #5c4033;
+            margin-bottom: 10px;
+            text-align: left;
+            border-left: 5px solid #5c4033;
+            padding-left: 10px;
+        }
+        .visual-subtext {
+            font-size: 13pt;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .highlight { color: #d32f2f; font-weight: bold; }
+        
+        /* 印刷ボタン用のUI */
+        .print-btn-container { text-align: center; padding: 15px; }
+        .print-btn { background-color: #2196F3; color: white; border: none; padding: 10px 20px; font-size: 14pt; border-radius: 5px; cursor: pointer; }
+        
+        /* 擬似UIコンポーネント */
+        .mock-ui { border: 2px solid #ccc; border-radius: 8px; padding: 15px; display: inline-block; text-align: left; background: #fff; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .flex-row { display: flex; gap: 15px; justify-content: center; }
+        .flex-col { flex: 1; }
+    </style>
+</head>
+<body>
+    <div class="no-print print-btn-container">
+        <button class="print-btn" onclick="window.print()">このマニュアルを印刷・PDF保存する</button>
+    </div>
+
+    <!-- 1ページ目：PC作業 -->
+    <div class="page">
+        <h1 class="header-title">ねこビン（デジタルフォト版）<br>思い出の入れ方</h1>
+        <p class="header-subtitle">〜 スマホをかざすだけで、いつでもあの子に会える 〜</p>
+
+        <div class="step-title"><span class="step-num">Step 1</span>写真を入れる「専用フォルダ」を作る</div>
+        
+        <div class="visual-block">
+            <div class="visual-desc">① パソコンで「Googleドライブ」を開き、新しくフォルダを作ります。</div>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <img src="1.jpg" alt="新規フォルダ作成" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <div style="font-size: 13pt; margin-top: 10px; text-align: left;">※フォルダ名に「愛するペットの名前」などを付けて作成します。</div>
+            </div>
+        </div>
+
+        <div class="visual-block">
+            <div class="visual-desc">② 作ったフォルダを「右クリック」して、リンクをコピーします。</div>
+            <div style="text-align: center;">
+                <img src="2.jpg" alt="リンクをコピー" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <div style="font-size: 13pt; color: #d32f2f; font-weight: bold; margin-top: 10px; text-align: left;">※アクセス権限は必ず「リンクを知っている全員」にしてください。</div>
+            </div>
+        </div>
+
+        <div class="visual-block" style="background-color: #fff8e1; border: 2px dashed #ffb300; padding: 15px; border-radius: 10px;">
+            <div class="visual-desc" style="border-left-color: #ffb300; margin-bottom: 10px;">③ コピーしたURLをスマホに送る</div>
+            <img src="3.jpg" alt="スマホへ送信" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 10px;">
+            <p class="visual-subtext" style="margin-bottom: 0;">コピーしたURL（リンク）を、メールやLINEを使って<strong>自分のスマートフォン宛て</strong>に送信しておいてください。</p>
+        </div>
+
+        <div class="step-title" style="margin-top: 30px;"><span class="step-num">Step 2</span>スマホに専用アプリを入れる</div>
+        <div class="visual-block">
+            <div class="visual-desc">スマホで無料アプリ「NFC Tools」をインストールします。</div>
+            <div class="flex-row">
+                <div class="flex-col mock-ui" style="text-align: center;">
+                    <div style="font-size: 16pt; font-weight: bold; margin-bottom: 10px;">iPhoneの方</div>
+                    <img src="qr_appstore.png" alt="App Store QR" style="width: 150px; height: 150px; display: inline-block;">
+                    <div style="font-size: 12pt; margin-top: 5px;">App Storeで読み取る</div>
+                </div>
+                <div class="flex-col mock-ui" style="text-align: center;">
+                    <div style="font-size: 16pt; font-weight: bold; margin-bottom: 10px;">Androidスマホの方</div>
+                    <img src="qr_googleplay.png" alt="Google Play QR" style="width: 150px; height: 150px; display: inline-block;">
+                    <div style="font-size: 12pt; margin-top: 5px;">Google Playで読み取る</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2ページ目：スマホアプリ操作 -->
+    <div class="page">
+        <div class="step-title"><span class="step-num">Step 3</span>ねこビンに書き込む（アプリの操作）</div>
+        <div class="visual-subtext">スマホで先ほど送ったURLを<span class="highlight">「コピー」</span>してから、アプリ「NFC Tools」を開いてください。</div>
+
+        <!-- 最初の画面遷移の画像を大きく表示 -->
+        <div class="visual-block">
+            <div class="visual-desc">①「書く」タブを選び、「レコードを追加」を押します。</div>
+            <!-- appli3 か appli4 がこの画面だと思われる。両方並べるか、代表としてappli4を使用 -->
+            <img src="appli4.webp" alt="レコード追加画面" style="width: 100%; border: 1px solid #ddd;">
+        </div>
+
+        <div class="visual-block">
+            <div class="visual-desc">②「URL / URI」を選び、コピーしたURLを貼り付けます。</div>
+            <!-- appli5 が横長のフロー画像 -->
+            <img src="appli5.webp" alt="URL貼り付けと書き込み" style="width: 100%; border: 1px solid #ddd;">
+            <p class="visual-subtext" style="margin-top: 10px;">入力枠を長押しして「ペースト（貼り付け）」し、右上のOKを押した後、「書き込み」ボタンを押します。</p>
+        </div>
+    </div>
+
+    <!-- 3ページ目：かざす操作と完了 -->
+    <div class="page">
+        <div class="visual-block" style="margin-top: 20px;">
+            <div class="visual-desc">③「NFCタグに近づけてください」と出たら、ねこビンにかざします。</div>
+            <div style="text-align: center;">
+                <img src="4.jpg" alt="スマホをねこビンにかざす" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <div style="font-size: 18pt; font-weight: bold; margin-top: 20px;">スマホの背面を、ねこビンの蓋にピッと当てます。</div>
+                <div style="font-size: 14pt; color: #555; margin-top: 10px;">大きなチェックマークが出たら大成功です！</div>
+            </div>
+        </div>
+
+        <div class="step-title" style="margin-top: 50px; background-color: #e8f5e9; color: #2e7d32;">
+            <span class="step-num" style="background-color: #2e7d32;">Step 4</span>
+            写真を入れて、いつでも楽しもう！
+        </div>
+
+        <div class="visual-block">
+            <div class="mock-ui" style="border-color: #2e7d32; border-width: 3px; background-color: #f1f8e9;">
+                <p class="visual-subtext" style="font-size: 16pt; font-weight: bold; text-align: center;">お疲れ様でした！設定はすべて完了です。</p>
+                <p class="visual-subtext">これからは、パソコンやスマホから「思い出の箱（Googleドライブ）」にペットの大切な写真や動画を自由に入れてください。</p>
+                
+                <div style="background-color: #fff; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; border: 1px solid #ccc;">
+                    <h3 style="color: #2e7d32; font-size: 22pt; margin-bottom: 10px;">📱 ねこビンにかざすだけ</h3>
+                    <p style="font-size: 16pt;">
+                        ねこビンの蓋にスマホをピッと当てるだけで、<br>いつでもあの子の写真が開きます。
+                    </p>
+                    <p style="font-size: 13pt; color: #d32f2f; margin-top: 10px; font-weight: bold;">※NFC機能を使う際は、スマホの画面ロックを解除してからかざしてください。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
